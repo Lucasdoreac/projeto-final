@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appClassePessoaBD.Views.TelaAlterarPessoa"
+             BackgroundImageSource="fundo.png"
+             Title="Alterar Pessoa">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" IconImageSource="salvarpessoa.png" Clicked="ToolbarItemClickedSalvar" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <Label Text="Nome:" FontAttributes="Bold" />
+            <Entry x:Name="txtNomePessoa" Placeholder="Digite o nome..." ClearButtonVisibility="WhileEditing" />
+
+            <Label Text="Idade:" FontAttributes="Bold" />
+            <Entry x:Name="txtIdadePessoa" Placeholder="Digite a idade..." Keyboard="Numeric" ClearButtonVisibility="WhileEditing" />
+
+            <Button Text="Salvar" Clicked="ToolbarItemClickedSalvar" BackgroundColor="#512BD4" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
