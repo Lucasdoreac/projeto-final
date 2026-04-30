@@ -1,9 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net10.0-android</TargetFrameworks>
-		<TargetFrameworks Condition="!$([MSBuild]::IsOSPlatform('linux'))">$(TargetFrameworks);net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Windows-only build (configured for Windows development) -->
+		<TargetFrameworks>net10.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment for cross-platform development on Mac with proper SDKs:
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">net10.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks Condition="!$([MSBuild]::IsOSPlatform('windows'))">net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+		-->
 
 		<!-- Note for MacCatalyst:
 		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
@@ -31,7 +34,7 @@
 		<ApplicationTitle>appClassePessoaBD</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.appclassepessoabd</ApplicationId>
+		<ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -101,15 +104,15 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\iconpessoa.svg" ForegroundScale="0.5" />
+	    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\iconpessoa.svg" ForegroundScale="0.5" />
 
 		<!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\splash.png" Color="#FFFFFF" BaseSize="800,600" />
+	    <MauiSplashScreen Include="Resources\Splash\splash.png" Color="#FFFFFF" BaseSize="800,600" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
-		
+
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
