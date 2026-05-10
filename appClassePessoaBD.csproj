@@ -122,7 +122,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.20" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-preview.1.26104.118" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 	</ItemGroup>
 

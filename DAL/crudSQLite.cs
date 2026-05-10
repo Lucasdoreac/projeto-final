@@ -6,38 +6,54 @@ namespace appClassePessoaBD.DAL
     public class crudSQLite
     {
         readonly SQLiteAsyncConnection _conexao;
+        bool _initialized = false;
 
         public crudSQLite(string path)
         {
             _conexao = new SQLiteAsyncConnection(path);
-            _conexao.CreateTableAsync<Pessoa>().Wait();
+            // REMOVIDO: .Wait() causava deadlock na UI thread
+            // A tabela será criada de forma lazy (assíncrona) no primeiro uso
         }
 
-        public Task<int> Insert(Pessoa pessoa1)
+        private async Task InitializeAsync()
         {
-            return _conexao.InsertAsync(pessoa1);
+            if (!_initialized)
+            {
+                await _conexao.CreateTableAsync<Pessoa>();
+                _initialized = true;
+            }
         }
 
-        public Task<List<Pessoa>> Update(Pessoa pessoa1)
+        public async Task<int> Insert(Pessoa pessoa1)
         {
+            await InitializeAsync();
+            return await _conexao.InsertAsync(pessoa1);
+        }
+
+        public async Task<List<Pessoa>> Update(Pessoa pessoa1)
+        {
+            await InitializeAsync();
             string sql = "UPDATE Pessoa SET pesNome=?, pesIdade=? WHERE pesID=? ";
-            return _conexao.QueryAsync<Pessoa>(sql, pessoa1.pesNome, pessoa1.pesIdade, pessoa1.pesID);
+            return await _conexao.QueryAsync<Pessoa>(sql, pessoa1.pesNome, pessoa1.pesIdade, pessoa1.pesID);
         }
 
-        public Task<List<Pessoa>> GetAll()
+        public async Task<List<Pessoa>> GetAll()
         {
-            return _conexao.Table<Pessoa>().ToListAsync();
+            await InitializeAsync();
+            return await _conexao.Table<Pessoa>().ToListAsync();
         }
 
-        public Task<int> Delete(int idPes)
+        public async Task<int> Delete(int idPes)
         {
-            return _conexao.Table<Pessoa>().DeleteAsync(i => i.pesID == idPes);
+            await InitializeAsync();
+            return await _conexao.Table<Pessoa>().DeleteAsync(i => i.pesID == idPes);
         }
 
-        public Task<List<Pessoa>> Search(string buscaPesssoa)
+        public async Task<List<Pessoa>> Search(string buscaPesssoa)
         {
+            await InitializeAsync();
             string sql = "SELECT * FROM Pessoa WHERE pesNome LIKE '%" + buscaPesssoa + "%' ";
-            return _conexao.QueryAsync<Pessoa>(sql);
+            return await _conexao.QueryAsync<Pessoa>(sql);
         }
     }
 }

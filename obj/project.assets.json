@@ -41,10 +41,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.DependencyInjection/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.dll": {
@@ -57,10 +57,10 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.0": {
         "type": "package",
         "compile": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -73,7 +73,7 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "Microsoft.Extensions.Diagnostics.Abstractions/10.0.0": {
@@ -138,12 +138,12 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Logging/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Logging.Abstractions": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Options": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection": "10.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Options": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Logging.dll": {
@@ -156,14 +156,13 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Logging.Abstractions/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118",
-          "System.Diagnostics.DiagnosticSource": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -176,15 +175,15 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Microsoft.Extensions.Logging.Debug/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Logging.Debug/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Logging": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Logging.Abstractions": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Logging": "10.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Logging.Debug.dll": {
@@ -197,14 +196,14 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Options/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Options/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Primitives": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Primitives": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Options.dll": {
@@ -217,10 +216,10 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/Microsoft.Extensions.Options.targets": {}
+          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
       },
-      "Microsoft.Extensions.Primitives/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Primitives/10.0.0": {
         "type": "package",
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
@@ -233,7 +232,7 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "Microsoft.Graphics.Win2D/1.3.2": {
@@ -868,22 +867,6 @@
         "runtime": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
-      },
-      "System.Diagnostics.DiagnosticSource/11.0.0-preview.1.26104.118": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net10.0/_._": {}
-        }
       }
     },
     "net10.0-windows10.0.19041/win-x64": {
@@ -926,10 +909,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.DependencyInjection/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.dll": {
@@ -942,10 +925,10 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.0": {
         "type": "package",
         "compile": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -958,7 +941,7 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "Microsoft.Extensions.Diagnostics.Abstractions/10.0.0": {
@@ -1023,12 +1006,12 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Logging/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Logging.Abstractions": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Options": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection": "10.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Options": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Logging.dll": {
@@ -1041,14 +1024,13 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Logging.Abstractions/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118",
-          "System.Diagnostics.DiagnosticSource": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -1061,15 +1043,15 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Microsoft.Extensions.Logging.Debug/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Logging.Debug/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Logging": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Logging.Abstractions": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Logging": "10.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Logging.Debug.dll": {
@@ -1082,14 +1064,14 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Options/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Options/10.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "11.0.0-preview.1.26104.118",
-          "Microsoft.Extensions.Primitives": "11.0.0-preview.1.26104.118"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Primitives": "10.0.0"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Options.dll": {
@@ -1102,10 +1084,10 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/Microsoft.Extensions.Options.targets": {}
+          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
       },
-      "Microsoft.Extensions.Primitives/11.0.0-preview.1.26104.118": {
+      "Microsoft.Extensions.Primitives/10.0.0": {
         "type": "package",
         "compile": {
           "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
@@ -1118,7 +1100,7 @@
           }
         },
         "build": {
-          "buildTransitive/net10.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "Microsoft.Graphics.Win2D/1.3.2": {
@@ -1614,22 +1596,6 @@
         "runtime": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
-      },
-      "System.Diagnostics.DiagnosticSource/11.0.0-preview.1.26104.118": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net10.0/_._": {}
-        }
       }
     }
   },
@@ -1692,60 +1658,64 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/11.0.0-preview.1.26104.118": {
-      "sha512": "yyUUFF+CcHWCaeSleE8fCB3xxkxH4Civ+mm5xJORwiOvkDSJOGxpPr3vvGEK/FiwyRcIUbswSjRLyT8kWXC20g==",
+    "Microsoft.Extensions.DependencyInjection/10.0.0": {
+      "sha512": "f0RBabswJq+gRu5a+hWIobrLWiUYPKMhCD9WO3sYBAdSy3FFH14LMvLVFZc2kPSCimBLxSuitUhsd6tb0TAY6A==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.dependencyinjection/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net10.0/_._",
         "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
         "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
         "lib/net10.0/Microsoft.Extensions.DependencyInjection.dll",
         "lib/net10.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net11.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net11.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
         "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.10.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/11.0.0-preview.1.26104.118": {
-      "sha512": "m42ZmEtgb8HrHCeOybwRC/0fXa14VA1EX7XXWzn5DWQ5ukP+ZwxyVYC9Z6UCoEm2jEYWPmz7sZmfCF8nRaocAw==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.0": {
+      "sha512": "L3AdmZ1WOK4XXT5YFPEwyt0ep6l8lGIPs7F5OOBZc77Zqeo01Of7XXICy47628sdVl0v/owxYJTe86DTgFwKCA==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net10.0/_._",
         "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
         "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
         "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/net11.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net11.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1838,39 +1808,41 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging/11.0.0-preview.1.26104.118": {
-      "sha512": "nunnoIIIwboghOWOHBKNMPk4UkmZUJP5xFu2sdd8IW7mt7ymwsetgSj8ZoiCXbV8bUYRYO2TpMOiDhoJxlHRLg==",
+    "Microsoft.Extensions.Logging/10.0.0": {
+      "sha512": "BStFkd5CcnEtarlcgYDBcFzGYCuuNMzPs02wN3WBsOFoYIEmYoUdAiU+au6opzoqfTYJsMTW00AeqDdnXH2CvA==",
       "type": "package",
-      "path": "microsoft.extensions.logging/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.logging/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net10.0/_._",
         "buildTransitive/net461/Microsoft.Extensions.Logging.targets",
         "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.targets",
         "lib/net10.0/Microsoft.Extensions.Logging.dll",
         "lib/net10.0/Microsoft.Extensions.Logging.xml",
-        "lib/net11.0/Microsoft.Extensions.Logging.dll",
-        "lib/net11.0/Microsoft.Extensions.Logging.xml",
         "lib/net462/Microsoft.Extensions.Logging.dll",
         "lib/net462/Microsoft.Extensions.Logging.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Logging.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Logging.xml",
-        "microsoft.extensions.logging.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.logging.10.0.0.nupkg.sha512",
         "microsoft.extensions.logging.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/11.0.0-preview.1.26104.118": {
-      "sha512": "hdZvAdEB0ow4EjYNTpXd0y5n3/o6APOzsqPU1hlYDLJsjPwIPsGTOuSSv5stbgmiSqpKBWlHiP0Ypi9cRT9itQ==",
+    "Microsoft.Extensions.Logging.Abstractions/10.0.0": {
+      "sha512": "FU/IfjDfwaMuKr414SSQNTIti/69bHEMb+QKrskRb26oVqpx3lNFXMjs/RC9ZUuhBhcwDM2BwOgoMw+PZ+beqQ==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.logging.abstractions/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1919,55 +1891,59 @@
         "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
         "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
         "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "buildTransitive/net10.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/net11.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net11.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging.Debug/11.0.0-preview.1.26104.118": {
-      "sha512": "quQPbPdgSVJfJlu9IUa/SZ12Hrcx8emMzTeUMWzeTzr3VfH+N7pK73Y3Zl2TvRFwaYEcGZiLOOgRbVIL0FifkQ==",
+    "Microsoft.Extensions.Logging.Debug/10.0.0": {
+      "sha512": "A/4vBtVaySLBGj4qluye+KSbeVCCMa6GcTbxf2YgnSDHs9b9105+VojBJ1eJPel8F1ny0JOh+Ci3vgCKn69tNQ==",
       "type": "package",
-      "path": "microsoft.extensions.logging.debug/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.logging.debug/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net10.0/_._",
         "buildTransitive/net461/Microsoft.Extensions.Logging.Debug.targets",
         "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Debug.targets",
         "lib/net10.0/Microsoft.Extensions.Logging.Debug.dll",
         "lib/net10.0/Microsoft.Extensions.Logging.Debug.xml",
-        "lib/net11.0/Microsoft.Extensions.Logging.Debug.dll",
-        "lib/net11.0/Microsoft.Extensions.Logging.Debug.xml",
         "lib/net462/Microsoft.Extensions.Logging.Debug.dll",
         "lib/net462/Microsoft.Extensions.Logging.Debug.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.Debug.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.Debug.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.Debug.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.Debug.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Debug.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Debug.xml",
-        "microsoft.extensions.logging.debug.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.logging.debug.10.0.0.nupkg.sha512",
         "microsoft.extensions.logging.debug.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Options/11.0.0-preview.1.26104.118": {
-      "sha512": "1kpoOsJXWqrOl++mb+jdCBGBpFNv9n8lKbRt2H4p88Gao2EjRUJglol5B9l5ECKMTu1t0gRmOe2x2oM7aPyG1A==",
+    "Microsoft.Extensions.Options/10.0.0": {
+      "sha512": "8oCAgXOow5XDrY9HaXX1QmH3ORsyZO/ANVHBlhLyCeWTH5Sg4UuqZeOTWJi6484M+LqSx0RqQXDJtdYy2BNiLQ==",
       "type": "package",
-      "path": "microsoft.extensions.options/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.options/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1988,49 +1964,53 @@
         "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
         "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
         "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "buildTransitive/net10.0/Microsoft.Extensions.Options.targets",
         "buildTransitive/net461/Microsoft.Extensions.Options.targets",
         "buildTransitive/net462/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Options.targets",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.targets",
         "buildTransitive/netstandard2.0/Microsoft.Extensions.Options.targets",
         "lib/net10.0/Microsoft.Extensions.Options.dll",
         "lib/net10.0/Microsoft.Extensions.Options.xml",
-        "lib/net11.0/Microsoft.Extensions.Options.dll",
-        "lib/net11.0/Microsoft.Extensions.Options.xml",
         "lib/net462/Microsoft.Extensions.Options.dll",
         "lib/net462/Microsoft.Extensions.Options.xml",
+        "lib/net8.0/Microsoft.Extensions.Options.dll",
+        "lib/net8.0/Microsoft.Extensions.Options.xml",
+        "lib/net9.0/Microsoft.Extensions.Options.dll",
+        "lib/net9.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.options.10.0.0.nupkg.sha512",
         "microsoft.extensions.options.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Primitives/11.0.0-preview.1.26104.118": {
-      "sha512": "AUUt0ofZsfRlvFQykBCgJk0CYHz4kniKlfZ6xre/rcVVIEQDyOjNdfmp+5QLbUCenMZx2De9LadfEH18znmpxw==",
+    "Microsoft.Extensions.Primitives/10.0.0": {
+      "sha512": "inRnbpCS0nwO/RuoZIAqxQUuyjaknOOnCEZB55KSMMjRhl0RQDttSmLSGsUJN3RQ3ocf5NDLFd2mOQViHqMK5w==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/11.0.0-preview.1.26104.118",
+      "path": "microsoft.extensions.primitives/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net10.0/_._",
         "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
         "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
         "lib/net10.0/Microsoft.Extensions.Primitives.dll",
         "lib/net10.0/Microsoft.Extensions.Primitives.xml",
-        "lib/net11.0/Microsoft.Extensions.Primitives.dll",
-        "lib/net11.0/Microsoft.Extensions.Primitives.xml",
         "lib/net462/Microsoft.Extensions.Primitives.dll",
         "lib/net462/Microsoft.Extensions.Primitives.xml",
+        "lib/net8.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net8.0/Microsoft.Extensions.Primitives.xml",
+        "lib/net9.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net9.0/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.11.0.0-preview.1.26104.118.nupkg.sha512",
+        "microsoft.extensions.primitives.10.0.0.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3749,37 +3729,11 @@
         "sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
-    },
-    "System.Diagnostics.DiagnosticSource/11.0.0-preview.1.26104.118": {
-      "sha512": "2extbTZVrDGCBARxtzXx1RYoFVCGrOG8R5L7ax6Ls9NILTj8nEz59MZD5Qe1zIkTPm4pFOyE0EvOITa0EoxQ7A==",
-      "type": "package",
-      "path": "system.diagnostics.diagnosticsource/11.0.0-preview.1.26104.118",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net10.0/_._",
-        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
-        "lib/net10.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net10.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net11.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net11.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.11.0.0-preview.1.26104.118.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0-windows10.0.19041": [
-      "Microsoft.Extensions.Logging.Debug >= 11.0.0-preview.1.26104.118",
+      "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.20",
       "sqlite-net-pcl >= 1.9.172"
     ]
@@ -3838,7 +3792,7 @@
         "dependencies": {
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
-            "version": "[11.0.0-preview.1.26104.118, )"
+            "version": "[10.0.0, )"
           },
           "Microsoft.Maui.Controls": {
             "target": "Package",
