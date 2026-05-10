@@ -30,8 +30,7 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        // .NET MAUI 10.0 com VS 18 (2025) exige CreateWindow
-        var navigationPage = new NavigationPage(new Views.TelaListaPessoa());
-        return new Window(navigationPage);
+        // .NET MAUI 10.0 exige CreateWindow - DIRETO sem variável intermediária
+        return new Window(new NavigationPage(new Views.TelaListaPessoa()));
     }
 }
