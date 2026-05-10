@@ -1,36 +1,37 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using appClassePessoaBD.DAL;
 
-namespace appClassePessoaBD
+namespace appClassePessoaBD;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    static crudSQLite? database;
+
+    public static crudSQLite Database
     {
-        static crudSQLite? database;
-
-        public static crudSQLite Database
+        get
         {
-            get
+            if (database == null)
             {
-                if (database == null)
-                {
-                    string path = Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "pessoas.db3"
-                    );
-                    database = new crudSQLite(path);
-                }
-                return database;
+                string path = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "pessoas.db3"
+                );
+                database = new crudSQLite(path);
             }
+            return database;
         }
+    }
 
-        public App()
-        {
-            InitializeComponent();
-        }
+    public App()
+    {
+        InitializeComponent();
+    }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new NavigationPage(new Views.TelaListaPessoa()));
-        }
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        // .NET MAUI 10.0 com VS 18 (2025) exige CreateWindow
+        var navigationPage = new NavigationPage(new Views.TelaListaPessoa());
+        return new Window(navigationPage);
     }
 }
