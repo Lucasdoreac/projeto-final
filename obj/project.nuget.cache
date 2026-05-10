@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "82W809idKhM=",
-  "success": false,
+  "dgSpecHash": "wlm1xFOoNGk=",
+  "success": true,
   "projectFilePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.0\\microsoft.extensions.configuration.10.0.0.nupkg.sha512",
@@ -28,67 +28,23 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\10.0.20\\microsoft.maui.graphics.win2d.winui.desktop.10.0.20.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\microsoft.maui.resizetizer.10.0.20.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.7\\microsoft.windows.sdk.net.ref.10.0.19041.7.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250909003\\microsoft.windowsappsdk.1.7.250909003.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.26100.4654\\microsoft.windows.sdk.buildtools.10.0.26100.4654.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.buildtools.msix\\1.7.20250829.1\\microsoft.windows.sdk.buildtools.msix.1.7.20250829.1.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk\\1.8.250907003\\microsoft.windowsappsdk.1.8.250907003.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.ai\\1.8.37\\microsoft.windowsappsdk.ai.1.8.37.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.base\\1.8.250831001\\microsoft.windowsappsdk.base.1.8.250831001.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.dwrite\\1.8.25090401\\microsoft.windowsappsdk.dwrite.1.8.25090401.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.foundation\\1.8.250906002\\microsoft.windowsappsdk.foundation.1.8.250906002.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.interactiveexperiences\\1.8.250906004\\microsoft.windowsappsdk.interactiveexperiences.1.8.250906004.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.runtime\\1.8.250907003\\microsoft.windowsappsdk.runtime.1.8.250907003.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.widgets\\1.8.250904007\\microsoft.windowsappsdk.widgets.1.8.250904007.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk.winui\\1.8.250906003\\microsoft.windowsappsdk.winui.1.8.250906003.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.2\\sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.2\\sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.7\\microsoft.netcore.app.runtime.win-x64.10.0.7.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.7.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.7\\microsoft.aspnetcore.app.runtime.win-x64.10.0.7.nupkg.sha512",
-    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\10.0.7\\microsoft.netcore.app.crossgen2.win-x64.10.0.7.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "appClassePessoaBD depende de Microsoft.Windows.SDK.NET.Ref (>= 10.0.19041), mas Microsoft.Windows.SDK.NET.Ref 10.0.19041 não foi encontrado. Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 foi resolvido em vez disso.",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
-      "targetGraphs": [
-        "net10.0-windows10.0.19041",
-        "net10.0-windows10.0.19041/win-x64"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "message": "O pacote 'Microsoft.Windows.SDK.NET.Ref 10.0.19041.7' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0-windows10.0.19041'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
-      "targetGraphs": [
-        "net10.0-windows10.0.19041"
-      ]
-    },
-    {
-      "code": "NU1213",
-      "level": "Error",
-      "message": "O pacote Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 tem um tipo de pacote DotnetPlatform incompatível com este projeto. ",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
-      "targetGraphs": [
-        "net10.0-windows10.0.19041"
-      ]
-    },
-    {
-      "code": "NU1213",
-      "level": "Error",
-      "message": "O pacote Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 tem um tipo de pacote DotnetPlatform incompatível com este projeto. ",
-      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
-      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
-      "targetGraphs": [
-        "net10.0-windows10.0.19041/win-x64"
-      ]
-    }
-  ]
+  "logs": []
 }

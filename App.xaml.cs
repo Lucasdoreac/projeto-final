@@ -30,7 +30,7 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        // Igual ao appUsandoEntry que funciona - página direta
-        return new Window(new Views.TelaListaPessoa());
+        // OBRIGATÓRIO: NavigationPage wrapper para ToolbarItems funcionarem
+        return new Window(new NavigationPage(new Views.TelaListaPessoa()));
     }
 }
