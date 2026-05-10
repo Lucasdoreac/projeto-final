@@ -557,6 +557,17 @@
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
+      "Microsoft.Windows.SDK.NET.Ref/10.0.19041.7": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Windows.SDK.NET.dll": {},
+          "lib/WinRT.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Windows.SDK.NET.dll": {},
+          "lib/WinRT.Runtime.dll": {}
+        }
+      },
       "Microsoft.WindowsAppSDK/1.7.250909003": {
         "type": "package",
         "dependencies": {
@@ -1401,6 +1412,17 @@
         "build": {
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
           "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "Microsoft.Windows.SDK.NET.Ref/10.0.19041.7": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Windows.SDK.NET.dll": {},
+          "lib/WinRT.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Windows.SDK.NET.dll": {},
+          "lib/WinRT.Runtime.dll": {}
         }
       },
       "Microsoft.WindowsAppSDK/1.7.250909003": {
@@ -3051,6 +3073,22 @@
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v8.xsd"
       ]
     },
+    "Microsoft.Windows.SDK.NET.Ref/10.0.19041.7": {
+      "sha512": "SVYcHxl5T3jDzLpmPpxVYgrmWdMuZh/B6W4KbhnJxwu7t5viBYIhxM4vH/vsPlR2d4xYPLbn7zj83TK+Wb9r9Q==",
+      "type": "package",
+      "path": "microsoft.windows.sdk.net.ref/10.0.19041.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "data/FrameworkList.xml",
+        "data/RuntimeList.xml",
+        "lib/Microsoft.Windows.SDK.NET.dll",
+        "lib/Microsoft.Windows.SDK.NET.xml",
+        "lib/WinRT.Runtime.dll",
+        "microsoft.windows.sdk.net.ref.10.0.19041.7.nupkg.sha512",
+        "microsoft.windows.sdk.net.ref.nuspec"
+      ]
+    },
     "Microsoft.WindowsAppSDK/1.7.250909003": {
       "sha512": "zeVFVrkFYPkAL1cmXo62D1LVC66VqBiMx+WfZ3aDUmizNECCJewMTk0JwjlgYQcIqxqsK1SjF1CeG74TsokWpQ==",
       "type": "package",
@@ -3735,6 +3773,7 @@
     "net10.0-windows10.0.19041": [
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.20",
+      "Microsoft.Windows.SDK.NET.Ref >= 10.0.19041",
       "sqlite-net-pcl >= 1.9.172"
     ]
   },
@@ -3797,6 +3836,10 @@
           "Microsoft.Maui.Controls": {
             "target": "Package",
             "version": "[10.0.20, )"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
+            "target": "Package",
+            "version": "[10.0.19041, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
@@ -4126,5 +4169,46 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "appClassePessoaBD depende de Microsoft.Windows.SDK.NET.Ref (>= 10.0.19041), mas Microsoft.Windows.SDK.NET.Ref 10.0.19041 não foi encontrado. Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 foi resolvido em vez disso.",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041",
+        "net10.0-windows10.0.19041/win-x64"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.Windows.SDK.NET.Ref 10.0.19041.7' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0-windows10.0.19041'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1213",
+      "level": "Error",
+      "message": "O pacote Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 tem um tipo de pacote DotnetPlatform incompatível com este projeto. ",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1213",
+      "level": "Error",
+      "message": "O pacote Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 tem um tipo de pacote DotnetPlatform incompatível com este projeto. ",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041/win-x64"
+      ]
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "4Qc+vFinb/k=",
-  "success": true,
+  "dgSpecHash": "82W809idKhM=",
+  "success": false,
   "projectFilePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.0\\microsoft.extensions.configuration.10.0.0.nupkg.sha512",
@@ -29,6 +29,7 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.maui.resizetizer\\10.0.20\\microsoft.maui.resizetizer.10.0.20.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.7\\microsoft.windows.sdk.net.ref.10.0.19041.7.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250909003\\microsoft.windowsappsdk.1.7.250909003.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.2\\sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
@@ -41,5 +42,53 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\10.0.7\\microsoft.netcore.app.crossgen2.win-x64.10.0.7.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "appClassePessoaBD depende de Microsoft.Windows.SDK.NET.Ref (>= 10.0.19041), mas Microsoft.Windows.SDK.NET.Ref 10.0.19041 não foi encontrado. Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 foi resolvido em vez disso.",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041",
+        "net10.0-windows10.0.19041/win-x64"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "O pacote 'Microsoft.Windows.SDK.NET.Ref 10.0.19041.7' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0-windows10.0.19041'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1213",
+      "level": "Error",
+      "message": "O pacote Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 tem um tipo de pacote DotnetPlatform incompatível com este projeto. ",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1213",
+      "level": "Error",
+      "message": "O pacote Microsoft.Windows.SDK.NET.Ref 10.0.19041.7 tem um tipo de pacote DotnetPlatform incompatível com este projeto. ",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "filePath": "C:\\Users\\lucas\\source\\repos\\projeto-final\\appClassePessoaBD.csproj",
+      "libraryId": "Microsoft.Windows.SDK.NET.Ref",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041/win-x64"
+      ]
+    }
+  ]
 }

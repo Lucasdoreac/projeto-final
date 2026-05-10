@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[10.0.20, )"
             },
+            "Microsoft.Windows.SDK.NET.Ref": {
+              "target": "Package",
+              "version": "[10.0.19041, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
