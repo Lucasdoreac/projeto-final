@@ -9,7 +9,7 @@
              Title="Lista de Pessoas">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Command="{Binding IncluirCommand}" />
+        <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Clicked="OnIncluirClicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -23,7 +23,7 @@
                           IsRefreshing="{Binding IsBusy}"
                           RefreshCommand="{Binding RefreshCommand}"
                           ItemSelected="OnItemSelected"
-                          SelectionMode="None">
+                          SelectionMode="Single">
                     <ListView.Header>
                         <Grid ColumnDefinitions="*, *, *">
                             <Label Grid.Column="0" Text="Código(ID)" FontAttributes="Bold" HorizontalTextAlignment="Center" />
@@ -36,7 +36,7 @@
                         <DataTemplate x:DataType="model:Pessoa">
                             <ViewCell Height="60">
                                 <ViewCell.ContextActions>
-                                    <MenuItem Text="Excluir Pessoa" IconImageSource="iconexcluirpessoa.png" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListaPessoasViewModel}}, Path=ExcluirCommand}" CommandParameter="{Binding}" />
+                                    <MenuItem Text="Excluir Pessoa" IconImageSource="iconexcluirpessoa.png" Clicked="OnExcluirClicked" CommandParameter="{Binding}" />
                                 </ViewCell.ContextActions>
 
                                 <Grid RowDefinitions="Auto" ColumnDefinitions="*, *, *" Padding="15">

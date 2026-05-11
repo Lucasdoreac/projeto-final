@@ -16,7 +16,7 @@ namespace appClassePessoaBD.Views;
 			_viewModel = new IncluirPessoaViewModel(pessoaService);
 			BindingContext = _viewModel;
 
-			// Carregar último nome salvo (Preferences)
-			_viewModel.CarregarUltimoNome();
+			// Carregar último nome salvo (Preferences) - DESATIVADO
+			// _viewModel.CarregarUltimoNome();
 		}
 	}

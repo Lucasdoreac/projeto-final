@@ -88,6 +88,9 @@ namespace appClassePessoaBD.ViewModels
                 };
 
                 await _pessoaService.Update(pessoa);
+
+                // Voltar para a tela anterior
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
             finally
             {

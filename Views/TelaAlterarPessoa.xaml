@@ -35,8 +35,7 @@
             <Label Text="{Binding MensagemErro}"
                    TextColor="Red"
                    FontAttributes="Bold"
-                   Margin="10"
-                   IsVisible="{Binding MensagemErro, Converter={StaticResource NotNullToBoolConverter}}" />
+                   Margin="10" />
         </StackLayout>
     </ContentPage.Content>
 

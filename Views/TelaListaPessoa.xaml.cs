@@ -23,6 +23,18 @@ namespace appClassePessoaBD.Views
             await _viewModel.CarregarPessoasAsync();
         }
 
+        private async void OnIncluirClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new TelaIncluirPessoa());
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Erro ao abrir tela: {ex.Message}\n\n{ex.StackTrace}", "OK");
+            }
+        }
+
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
@@ -32,6 +44,27 @@ namespace appClassePessoaBD.Views
             await Navigation.PushAsync(new TelaAlterarPessoa(pessoa));
 
             lstPessoas.SelectedItem = null;
+        }
+
+        private async void OnExcluirClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var menuItem = sender as MenuItem;
+                if (menuItem?.CommandParameter is Pessoa pessoa)
+                {
+                    bool confirmar = await DisplayAlert("Confirmação", $"Deseja excluir {pessoa.pesNome}?", "Sim", "Não");
+                    if (confirmar)
+                    {
+                        await App.Database.Delete(pessoa.pesID);
+                        _viewModel.Pessoas.Remove(pessoa);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Erro ao excluir: {ex.Message}", "OK");
+            }
         }
     }
 }

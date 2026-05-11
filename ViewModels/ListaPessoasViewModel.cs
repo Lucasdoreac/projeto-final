@@ -69,7 +69,8 @@ namespace appClassePessoaBD.ViewModels
 
         private async Task IncluirAsync()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new Views.TelaIncluirPessoa());
+            // Navegação será tratada no code-behind da View
+            await Task.CompletedTask;
         }
 
         private async Task ExcluirAsync(Pessoa pessoa)

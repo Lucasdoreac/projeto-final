@@ -80,9 +80,8 @@ namespace appClassePessoaBD.ViewModels
 
                 await _pessoaService.Insert(pessoa);
 
-                // Limpar formulário
-                Nome = string.Empty;
-                Idade = 0;
+                // Voltar para a tela anterior
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
             finally
             {
