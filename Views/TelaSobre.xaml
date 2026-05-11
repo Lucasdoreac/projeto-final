@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appClassePessoaBD.Views.TelaSobre"
+             BackgroundImageSource="fundo.png"
+             Title="Sobre">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <!-- Título e Versão -->
+                <Label Text="Cadastro de Pessoas"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,10" />
+
+                <Label Text="Versão 1.0"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,20" />
+
+                <Label Text="Aplicativo desenvolvido para a disciplina de"
+                       FontSize="14"
+                       HorizontalTextAlignment="Center" />
+
+                <Label Text="Programação Para Dispositivos Móveis 2026"
+                       FontAttributes="Bold"
+                       FontSize="14"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20" />
+
+                <Label Text="Créditos:"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       Margin="0,20,0,10" />
+
+                <Label Text="Desenvolvido com .NET MAUI 8.0"
+                       FontSize="14"
+                       HorizontalTextAlignment="Center" />
+
+                <Label Text="SQLite + MVVM + Data Binding"
+                       FontSize="14"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20" />
+
+                <Label Text="Tecnologias Utilizadas:"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       Margin="0,20,0,10" />
+
+                <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="• C# 12 / .NET 8.0" FontSize="14" />
+                        <Label Text="• .NET MAUI (Multi-platform App UI)" FontSize="14" />
+                        <Label Text="• SQLite (sqlite-net-pcl)" FontSize="14" />
+                        <Label Text="• MVVM Pattern" FontSize="14" />
+                        <Label Text="• Data Binding" FontSize="14" />
+                        <Label Text="• Preferences API" FontSize="14" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- WebView com GitHub -->
+                <Label Text="Repositório GitHub:"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       Margin="0,20,0,10" />
+
+                <WebView x:Name="webViewGitHub"
+                         HeightRequest="400"
+                         BackgroundColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

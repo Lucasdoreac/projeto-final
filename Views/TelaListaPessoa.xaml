@@ -11,6 +11,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Clicked="OnIncluirClicked" />
         <ToolbarItem Text="Configurações" IconImageSource="iconconfig.png" Clicked="OnConfiguracoesClicked" Order="Secondary" />
+        <ToolbarItem Text="Sobre" IconImageSource="iconsobre.png" Clicked="OnSobreClicked" Order="Secondary" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

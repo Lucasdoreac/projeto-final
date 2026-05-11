@@ -78,5 +78,17 @@ namespace appClassePessoaBD.Views
                 await DisplayAlert("Erro", $"Erro ao excluir: {ex.Message}", "OK");
             }
         }
+
+        private async void OnSobreClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new TelaSobre());
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Erro ao abrir sobre: {ex.Message}", "OK");
+            }
+        }
     }
 }
