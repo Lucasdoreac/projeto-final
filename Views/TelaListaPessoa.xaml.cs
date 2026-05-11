@@ -1,119 +1,37 @@
 using appClassePessoaBD.Model;
-using System.Collections.ObjectModel;
+using appClassePessoaBD.ViewModels;
+using appClassePessoaBD.Services;
 
-namespace appClassePessoaBD.Views;
-
-public partial class TelaListaPessoa : ContentPage
+namespace appClassePessoaBD.Views
 {
-    ObservableCollection<Pessoa> listagemPessoas = new ObservableCollection<Pessoa>();
-
-    public TelaListaPessoa()
+    public partial class TelaListaPessoa : ContentPage
     {
-        InitializeComponent();
-        lstPessoas.ItemsSource = listagemPessoas;
-    }
+        private readonly ListaPessoasViewModel _viewModel;
 
-    private async void irTelaIncluirPessoa(object sender, EventArgs e)
-    {
-        try
+        public TelaListaPessoa()
         {
-            await Navigation.PushAsync(new TelaIncluirPessoa());
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Erro no Cadastro da Pessoa !!!!", ex.Message, "OK");
-        }
-    }
+            InitializeComponent();
 
-    protected async override void OnAppearing()
-    {
-        try
-        {
-            listagemPessoas.Clear();
-            List<Pessoa> temp = await App.Database.GetAll();
-            temp.ForEach(i => listagemPessoas.Add(i));
+            // Criar Service e ViewModel manualmente (sem DI container)
+            var pessoaService = new PessoaService(App.Database);
+            _viewModel = new ListaPessoasViewModel(pessoaService);
+            BindingContext = _viewModel;
         }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Erro Desconhecido no Carregamento da Lista !!!!", ex.Message, "OK");
-        }
-    }
 
-    private async void excluirPessoa(object sender, EventArgs e)
-    {
-        try
+        protected async override void OnAppearing()
         {
-            MenuItem itemSelecionado = sender as MenuItem;
-            Pessoa pessoaSelecionada = itemSelecionado.BindingContext as Pessoa;
+            await _viewModel.CarregarPessoasAsync();
+        }
 
-            bool confirmacao = await DisplayAlert("Tem Certeza que quer excluir a Pessoa?",
-                $"Excluir {pessoaSelecionada.pesNome}", "Sim", "Não");
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
 
-            if (confirmacao)
-            {
-                await App.Database.Delete(pessoaSelecionada.pesID);
-                listagemPessoas.Remove(pessoaSelecionada);
-            }
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Erro na Exclusão da Pessoa !!!!", ex.Message, "OK");
-        }
-    }
+            var pessoa = e.SelectedItem as Pessoa;
+            await Navigation.PushAsync(new TelaAlterarPessoa(pessoa));
 
-    private async void txtBuscar(object sender, TextChangedEventArgs e)
-    {
-        try
-        {
-            string busca = e.NewTextValue;
-            lstPessoas.IsRefreshing = true;
-
-            listagemPessoas.Clear();
-            List<Pessoa> temp = await App.Database.Search(busca);
-            temp.ForEach(i => listagemPessoas.Add(i));
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Erro na Busca de Pessoas !!!!", ex.Message, "OK");
-        }
-        finally
-        {
-            lstPessoas.IsRefreshing = false;
-        }
-    }
-
-    private void lstPessoasItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        try
-        {
-            Pessoa pessoa1 = e.SelectedItem as Pessoa;
-
-            Navigation.PushAsync(new TelaAlterarPessoa
-            {
-                BindingContext = pessoa1,
-            });
-        }
-        catch (Exception ex)
-        {
-            DisplayAlert("Erro Desconhecido na Seleção de Pessoa !!!!", ex.Message, "OK");
-        }
-    }
-
-    private async void refCarregando(object sender, EventArgs e)
-    {
-        try
-        {
-            listagemPessoas.Clear();
-            List<Pessoa> temp = await App.Database.GetAll();
-            temp.ForEach(i => listagemPessoas.Add(i));
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Erro Desconhecido no carregamento de Pessoas !!!!", ex.Message, "OK");
-        }
-        finally
-        {
-            lstPessoas.IsRefreshing = false;
+            lstPessoas.SelectedItem = null;
         }
     }
 }

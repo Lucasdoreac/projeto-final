@@ -1,44 +1,65 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:appClassePessoaBD.ViewModels"
+             xmlns:model="clr-namespace:appClassePessoaBD.Model"
              x:Class="appClassePessoaBD.Views.TelaListaPessoa"
              BackgroundImageSource="fundo.png"
+             x:DataType="viewmodels:ListaPessoasViewModel"
              Title="Lista de Pessoas">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Clicked="irTelaIncluirPessoa" />
+        <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Command="{Binding IncluirCommand}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <SearchBar x:Name="txtBusca" Placeholder="Qual a Pessoa?" TextChanged="txtBuscar" />
+        <Grid>
+            <StackLayout>
+                <SearchBar x:Name="txtBusca" Margin="10" Placeholder="Qual a Pessoa?" Text="{Binding TextoBusca}" />
 
-            <ListView x:Name="lstPessoas" IsPullToRefreshEnabled="True" Refreshing="refCarregando" ItemSelected="lstPessoasItemSelected">
-                <ListView.Header>
-                    <Grid ColumnDefinitions="*, *, *">
-                        <Label Grid.Column="0" Text="ID" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-                        <Label Grid.Column="1" Text="Nome" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-                        <Label Grid.Column="2" Text="Idade" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-                    </Grid>
-                </ListView.Header>
+                <ListView x:Name="lstPessoas"
+                          ItemsSource="{Binding Pessoas}"
+                          IsPullToRefreshEnabled="True"
+                          IsRefreshing="{Binding IsBusy}"
+                          RefreshCommand="{Binding RefreshCommand}"
+                          ItemSelected="OnItemSelected"
+                          SelectionMode="None">
+                    <ListView.Header>
+                        <Grid ColumnDefinitions="*, *, *">
+                            <Label Grid.Column="0" Text="Código(ID)" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                            <Label Grid.Column="1" Text="Nome" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                            <Label Grid.Column="2" Text="Idade" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                        </Grid>
+                    </ListView.Header>
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Excluir" IconImageSource="iconexcluirpessoa.png" Clicked="excluirPessoa" />
-                            </ViewCell.ContextActions>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Pessoa">
+                            <ViewCell Height="60">
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Excluir Pessoa" IconImageSource="iconexcluirpessoa.png" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListaPessoasViewModel}}, Path=ExcluirCommand}" CommandParameter="{Binding}" />
+                                </ViewCell.ContextActions>
 
-                            <Grid ColumnDefinitions="*, *, *">
-                                <Label Grid.Column="0" Text="{Binding pesID}" HorizontalTextAlignment="Center" />
-                                <Label Grid.Column="1" Text="{Binding pesNome}" HorizontalTextAlignment="Center" />
-                                <Label Grid.Column="2" Text="{Binding pesIdade}" HorizontalTextAlignment="Center" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                                <Grid RowDefinitions="Auto" ColumnDefinitions="*, *, *" Padding="15">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding pesID}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" />
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding pesNome}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" />
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding pesIdade}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!-- ActivityIndicator sobreposto durante carregamentos -->
+            <ActivityIndicator x:Name="loadingIndicator"
+                               IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"
+                               Color="#512BD4"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               WidthRequest="50"
+                               HeightRequest="50" />
+        </Grid>
     </ContentPage.Content>
 
 </ContentPage>

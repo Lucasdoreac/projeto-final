@@ -1,0 +1,3 @@
+[DEBUG] OnAppearing: Carregando lista de pessoas
+[DEBUG] OnAppearing: 0 pessoas carregadas
+[DEBUG] OnAppearing: ObservableCollection tem 0 itens

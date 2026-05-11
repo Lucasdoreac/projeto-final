@@ -1,8 +1,12 @@
+/*
+ * A biblioteca SQLite é chamada aqui para que as anotações de chave primária
+ * e de autoIncremento possam ser usadas na propriedade pesID
+ */
 using SQLite;
 
 namespace appClassePessoaBD.Model
 {
-    [Table("Pessoa")]
+    [Table ("Pessoa")]
     public class Pessoa
     {
         [PrimaryKey, AutoIncrement, Unique, NotNull]
