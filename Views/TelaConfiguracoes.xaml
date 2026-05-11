@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:appClassePessoaBD.ViewModels"
+             x:Class="appClassePessoaBD.Views.TelaConfiguracoes"
+             BackgroundImageSource="fundo.png"
+             x:DataType="viewmodels:ConfiguracoesViewModel"
+             Title="Configurações">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" IconImageSource="salvarpessoa.png" Command="{Binding SalvarCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Preferências do Aplicativo"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20" />
+
+            <!-- Opção: Salvar último nome -->
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Switch x:Name="switchSalvarNome"
+                            IsToggled="{Binding SalvarUltimoNome}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center" />
+                    <Label Text="Salvar último nome cadastrado"
+                           VerticalOptions="Center"
+                           FontSize="16" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Opção: Ativar sons -->
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Switch x:Name="switchAtivarSons"
+                            IsToggled="{Binding AtivarSons}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center" />
+                    <Label Text="Ativar sons do sistema"
+                           VerticalOptions="Center"
+                           FontSize="16" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Opção: Limpar dados -->
+            <Frame BackgroundColor="#FFE0E0" CornerRadius="10" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="Zona de Perigo"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="Red" />
+                    <Label Text="Esta ação apagará TODOS os dados cadastrados."
+                           FontSize="14"
+                           TextColor="Red" />
+                    <Button Text="Limpar Banco de Dados"
+                            Command="{Binding LimparDadosCommand}"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            CornerRadius="5" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Label de mensagem de sucesso -->
+            <Label Text="{Binding MensagemSucesso}"
+                   TextColor="Green"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

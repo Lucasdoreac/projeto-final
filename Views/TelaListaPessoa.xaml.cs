@@ -35,6 +35,18 @@ namespace appClassePessoaBD.Views
             }
         }
 
+        private async void OnConfiguracoesClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new TelaConfiguracoes());
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Erro ao abrir configurações: {ex.Message}", "OK");
+            }
+        }
+
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
