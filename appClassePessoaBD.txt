@@ -1,0 +1,857 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: **/*.{cs,csproj,xaml}
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+App.xaml
+App.xaml.cs
+appClassePessoaBD.csproj
+DAL/crudSQLite.cs
+MauiProgram.cs
+Model/Pessoa.cs
+Platforms/Windows/Program.cs
+Resources/Styles/Colors.xaml
+Resources/Styles/Styles.xaml
+TestPage.xaml.cs
+Views/TelaAlterarPessoa.xaml
+Views/TelaAlterarPessoa.xaml.cs
+Views/TelaIncluirPessoa.xaml
+Views/TelaIncluirPessoa.xaml.cs
+Views/TelaListaPessoa.xaml
+Views/TelaListaPessoa.xaml.cs
+Views/TestPageMinimal.xaml
+Views/TestPageMinimal.xaml.cs
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="Model/Pessoa.cs">
+using SQLite;
+
+namespace appClassePessoaBD.Model
+{
+    [Table("Pessoa")]
+    public class Pessoa
+    {
+        [PrimaryKey, AutoIncrement, Unique, NotNull]
+        public int pesID { get; set; }
+
+        [MaxLength(1000)]
+        public string? pesNome { get; set; }
+
+        [MaxLength(3)]
+        public int pesIdade { get; set; }
+    }
+}
+</file>
+
+<file path="Platforms/Windows/Program.cs">
+using Microsoft.UI.Xaml;
+
+namespace appClassePessoaBD
+{
+    class Program
+    {
+        [global::System.STAThreadAttribute()]
+        public static void Main(string[] args)
+        {
+            global::Microsoft.UI.Xaml.Application.Start((p) => new App());
+        }
+    }
+}
+</file>
+
+<file path="Resources/Styles/Colors.xaml">
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primary">#512BD4</Color>
+    <Color x:Key="Secondary">#DFD8F7</Color>
+    <Color x:Key="Tertiary">#2B0B98</Color>
+
+    <Color x:Key="White">White</Color>
+    <Color x:Key="Black">Black</Color>
+    <Color x:Key="Gray100">#E1E1E1</Color>
+    <Color x:Key="Gray200">#C8C8C8</Color>
+    <Color x:Key="Gray300">#ACACAC</Color>
+    <Color x:Key="Gray400">#919191</Color>
+    <Color x:Key="Gray500">#6E6E6E</Color>
+    <Color x:Key="Gray600">#404040</Color>
+    <Color x:Key="Gray900">#212121</Color>
+    <Color x:Key="Gray950">#141414</Color>
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
+    <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}"/>
+    <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}"/>
+    <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray300}"/>
+    <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray400}"/>
+    <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}"/>
+    <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
+    <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+</ResourceDictionary>
+</file>
+
+<file path="Resources/Styles/Styles.xaml">
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
+    </Style>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"/>
+        <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+        <Setter Property="TextColor" Value="{StaticResource White}"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="14,10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource Gray400}"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+</ResourceDictionary>
+</file>
+
+<file path="TestPage.xaml.cs">
+using Microsoft.Maui.Controls;
+
+namespace appClassePessoaBD.Views
+{
+    public class TestPage : ContentPage
+    {
+        public TestPage()
+        {
+            Content = new Label
+            {
+                Text = "TESTE - APP FUNCIONA!",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+        }
+    }
+}
+</file>
+
+<file path="Views/TelaAlterarPessoa.xaml">
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appClassePessoaBD.Views.TelaAlterarPessoa"
+             BackgroundImageSource="fundo.png"
+             Title="Alterar Pessoa">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" IconImageSource="salvarpessoa.png" Clicked="ToolbarItemClickedSalvar" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <Label Text="Nome:" FontAttributes="Bold" />
+            <Entry x:Name="txtNomePessoa" Placeholder="Digite o nome..." ClearButtonVisibility="WhileEditing" />
+
+            <Label Text="Idade:" FontAttributes="Bold" />
+            <Entry x:Name="txtIdadePessoa" Placeholder="Digite a idade..." Keyboard="Numeric" ClearButtonVisibility="WhileEditing" />
+
+            <Button Text="Salvar" Clicked="ToolbarItemClickedSalvar" BackgroundColor="#512BD4" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+</file>
+
+<file path="Views/TelaAlterarPessoa.xaml.cs">
+using appClassePessoaBD.Model;
+
+namespace appClassePessoaBD.Views;
+
+public partial class TelaAlterarPessoa : ContentPage
+{
+    public TelaAlterarPessoa()
+    {
+        InitializeComponent();
+    }
+
+    private async void ToolbarItemClickedSalvar(object sender, EventArgs e)
+    {
+        try
+        {
+            Pessoa PessoaAnexada = BindingContext as Pessoa;
+
+            if ((string.IsNullOrWhiteSpace(txtNomePessoa.Text)))
+            {
+                DisplayAlert("Erro", "Verifique se a caixa de texto Nome da Pessoa está vazia !!!!", "OK");
+                txtNomePessoa.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(txtIdadePessoa.Text))
+            {
+                DisplayAlert("Erro", "Verifique se a caixa de texto Idade da Pessoa está vazia !!!!", "OK");
+                txtIdadePessoa.Focus();
+            }
+            else
+            {
+                Pessoa pessoa1 = new Pessoa
+                {
+                    pesID = PessoaAnexada.pesID,
+                    pesNome = txtNomePessoa.Text,
+                    pesIdade = Convert.ToInt32(txtIdadePessoa.Text),
+                };
+
+                await App.Database.Update(pessoa1);
+                await DisplayAlert("Pessoa Alterada com Sucesso !!!!", "", "OK");
+                await Navigation.PushAsync(new TelaListaPessoa());
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro na Alteração da Pessoa !!!!", ex.Message, "OK");
+        }
+    }
+}
+</file>
+
+<file path="Views/TelaIncluirPessoa.xaml">
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appClassePessoaBD.Views.TelaIncluirPessoa"
+             BackgroundImageSource="fundo.png"
+             Title="Incluir Pessoa">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" IconImageSource="salvarpessoa.png" Clicked="ToolbarItemClickedSalvar" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <Label Text="Nome:" FontAttributes="Bold" />
+            <Entry x:Name="txtNomePessoa" Placeholder="Digite o nome..." ClearButtonVisibility="WhileEditing" />
+
+            <Label Text="Idade:" FontAttributes="Bold" />
+            <Entry x:Name="txtIdadePessoa" Placeholder="Digite a idade..." Keyboard="Numeric" ClearButtonVisibility="WhileEditing" />
+
+            <Button Text="Salvar" Clicked="ToolbarItemClickedSalvar" BackgroundColor="#512BD4" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+</file>
+
+<file path="Views/TelaIncluirPessoa.xaml.cs">
+using appClassePessoaBD.Model;
+
+namespace appClassePessoaBD.Views;
+
+public partial class TelaIncluirPessoa : ContentPage
+{
+    public TelaIncluirPessoa()
+    {
+        InitializeComponent();
+    }
+
+    private async void ToolbarItemClickedSalvar(object sender, EventArgs e)
+    {
+        try
+        {
+            if ((string.IsNullOrWhiteSpace(txtNomePessoa.Text)))
+            {
+                await DisplayAlert("Erro", "Verifique se a caixa de texto Nome da Pessoa está vazia !!!!", "OK");
+                txtNomePessoa.Focus();
+                return;
+            }
+
+            Pessoa pessoa1 = new Pessoa
+            {
+                pesNome = txtNomePessoa.Text,
+                pesIdade = Convert.ToInt32(txtIdadePessoa.Text),
+            };
+
+            await App.Database.Insert(pessoa1);
+
+            await DisplayAlert("Pessoa Cadastrada com Sucesso !!!!", "", "OK");
+
+            await Navigation.PushAsync(new TelaListaPessoa());
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro no Cadastro da Pessoa !!!!", ex.Message, "OK");
+
+            txtNomePessoa.Text = "";
+            txtIdadePessoa.Text = "";
+            txtNomePessoa.Focus();
+        }
+    }
+}
+</file>
+
+<file path="Views/TelaListaPessoa.xaml">
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appClassePessoaBD.Views.TelaListaPessoa"
+             BackgroundImageSource="fundo.png"
+             Title="Lista de Pessoas">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Clicked="irTelaIncluirPessoa" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="txtBusca" Placeholder="Qual a Pessoa?" TextChanged="txtBuscar" />
+
+            <ListView x:Name="lstPessoas" IsPullToRefreshEnabled="True" Refreshing="refCarregando" ItemSelected="lstPessoasItemSelected">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*, *, *">
+                        <Label Grid.Column="0" Text="ID" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                        <Label Grid.Column="1" Text="Nome" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                        <Label Grid.Column="2" Text="Idade" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Excluir" IconImageSource="iconexcluirpessoa.png" Clicked="excluirPessoa" />
+                            </ViewCell.ContextActions>
+
+                            <Grid ColumnDefinitions="*, *, *">
+                                <Label Grid.Column="0" Text="{Binding pesID}" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="1" Text="{Binding pesNome}" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="2" Text="{Binding pesIdade}" HorizontalTextAlignment="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+</file>
+
+<file path="Views/TelaListaPessoa.xaml.cs">
+using appClassePessoaBD.Model;
+using System.Collections.ObjectModel;
+
+namespace appClassePessoaBD.Views;
+
+public partial class TelaListaPessoa : ContentPage
+{
+    ObservableCollection<Pessoa> listagemPessoas = new ObservableCollection<Pessoa>();
+
+    public TelaListaPessoa()
+    {
+        InitializeComponent();
+        lstPessoas.ItemsSource = listagemPessoas;
+    }
+
+    private async void irTelaIncluirPessoa(object sender, EventArgs e)
+    {
+        try
+        {
+            await Navigation.PushAsync(new TelaIncluirPessoa());
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro no Cadastro da Pessoa !!!!", ex.Message, "OK");
+        }
+    }
+
+    protected async override void OnAppearing()
+    {
+        try
+        {
+            listagemPessoas.Clear();
+            List<Pessoa> temp = await App.Database.GetAll();
+            temp.ForEach(i => listagemPessoas.Add(i));
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro Desconhecido no Carregamento da Lista !!!!", ex.Message, "OK");
+        }
+    }
+
+    private async void excluirPessoa(object sender, EventArgs e)
+    {
+        try
+        {
+            MenuItem itemSelecionado = sender as MenuItem;
+            Pessoa pessoaSelecionada = itemSelecionado.BindingContext as Pessoa;
+
+            bool confirmacao = await DisplayAlert("Tem Certeza que quer excluir a Pessoa?",
+                $"Excluir {pessoaSelecionada.pesNome}", "Sim", "Não");
+
+            if (confirmacao)
+            {
+                await App.Database.Delete(pessoaSelecionada.pesID);
+                listagemPessoas.Remove(pessoaSelecionada);
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro na Exclusão da Pessoa !!!!", ex.Message, "OK");
+        }
+    }
+
+    private async void txtBuscar(object sender, TextChangedEventArgs e)
+    {
+        try
+        {
+            string busca = e.NewTextValue;
+            lstPessoas.IsRefreshing = true;
+
+            listagemPessoas.Clear();
+            List<Pessoa> temp = await App.Database.Search(busca);
+            temp.ForEach(i => listagemPessoas.Add(i));
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro na Busca de Pessoas !!!!", ex.Message, "OK");
+        }
+        finally
+        {
+            lstPessoas.IsRefreshing = false;
+        }
+    }
+
+    private void lstPessoasItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        try
+        {
+            Pessoa pessoa1 = e.SelectedItem as Pessoa;
+
+            Navigation.PushAsync(new TelaAlterarPessoa
+            {
+                BindingContext = pessoa1,
+            });
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Erro Desconhecido na Seleção de Pessoa !!!!", ex.Message, "OK");
+        }
+    }
+
+    private async void refCarregando(object sender, EventArgs e)
+    {
+        try
+        {
+            listagemPessoas.Clear();
+            List<Pessoa> temp = await App.Database.GetAll();
+            temp.ForEach(i => listagemPessoas.Add(i));
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro Desconhecido no carregamento de Pessoas !!!!", ex.Message, "OK");
+        }
+        finally
+        {
+            lstPessoas.IsRefreshing = false;
+        }
+    }
+}
+</file>
+
+<file path="Views/TestPageMinimal.xaml">
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appClassePessoaBD.Views.TestPageMinimal"
+             Title="Teste Mínimo">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="🎉 JANELA VISÍVEL!"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Green"/>
+            <Label Text="Se você está vendo isso, o app funciona!"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+</file>
+
+<file path="Views/TestPageMinimal.xaml.cs">
+using appClassePessoaBD.DAL;
+
+namespace appClassePessoaBD.Views
+{
+    public partial class TestPageMinimal : ContentPage
+    {
+        public TestPageMinimal()
+        {
+            InitializeComponent();
+        }
+    }
+}
+</file>
+
+<file path="App.xaml">
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:appClassePessoaBD"
+             x:Class="appClassePessoaBD.App">
+</Application>
+</file>
+
+<file path="DAL/crudSQLite.cs">
+using appClassePessoaBD.Model;
+using SQLite;
+
+namespace appClassePessoaBD.DAL
+{
+    public class crudSQLite
+    {
+        readonly SQLiteAsyncConnection _conexao;
+        bool _initialized = false;
+
+        public crudSQLite(string path)
+        {
+            _conexao = new SQLiteAsyncConnection(path);
+            // REMOVIDO: .Wait() causava deadlock na UI thread
+            // A tabela será criada de forma lazy (assíncrona) no primeiro uso
+        }
+
+        private async Task InitializeAsync()
+        {
+            if (!_initialized)
+            {
+                await _conexao.CreateTableAsync<Pessoa>();
+                _initialized = true;
+            }
+        }
+
+        public async Task<int> Insert(Pessoa pessoa1)
+        {
+            await InitializeAsync();
+            return await _conexao.InsertAsync(pessoa1);
+        }
+
+        public async Task<List<Pessoa>> Update(Pessoa pessoa1)
+        {
+            await InitializeAsync();
+            string sql = "UPDATE Pessoa SET pesNome=?, pesIdade=? WHERE pesID=? ";
+            return await _conexao.QueryAsync<Pessoa>(sql, pessoa1.pesNome, pessoa1.pesIdade, pessoa1.pesID);
+        }
+
+        public async Task<List<Pessoa>> GetAll()
+        {
+            await InitializeAsync();
+            return await _conexao.Table<Pessoa>().ToListAsync();
+        }
+
+        public async Task<int> Delete(int idPes)
+        {
+            await InitializeAsync();
+            return await _conexao.Table<Pessoa>().DeleteAsync(i => i.pesID == idPes);
+        }
+
+        public async Task<List<Pessoa>> Search(string buscaPesssoa)
+        {
+            await InitializeAsync();
+            string sql = "SELECT * FROM Pessoa WHERE pesNome LIKE '%" + buscaPesssoa + "%' ";
+            return await _conexao.QueryAsync<Pessoa>(sql);
+        }
+    }
+}
+</file>
+
+<file path="MauiProgram.cs">
+using Microsoft.Extensions.Logging;
+
+namespace appClassePessoaBD
+{
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                });
+
+#if DEBUG
+            builder.Logging.AddDebug();
+#endif
+
+            return builder.Build();
+        }
+    }
+}
+</file>
+
+<file path="App.xaml.cs">
+using Microsoft.Extensions.Logging;
+using appClassePessoaBD.DAL;
+using appClassePessoaBD.Views;
+
+namespace appClassePessoaBD;
+
+public partial class App : Application
+{
+    static crudSQLite? database;
+
+    public static crudSQLite Database
+    {
+        get
+        {
+            if (database == null)
+            {
+                string path = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "pessoas.db3"
+                );
+                database = new crudSQLite(path);
+            }
+            return database;
+        }
+    }
+
+    public App()
+    {
+        InitializeComponent();
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        // Igual ao appUsandoEntry que funciona - página direta sem NavigationPage
+        return new Window(new TelaListaPessoa());
+    }
+}
+</file>
+
+<file path="appClassePessoaBD.csproj">
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- Windows-only build (configured for Windows development) -->
+		<TargetFrameworks>net10.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment for cross-platform development on Mac with proper SDKs:
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">net10.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks Condition="!$([MSBuild]::IsOSPlatform('windows'))">net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+		-->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>appClassePessoaBD</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Enable XAML source generation for faster build times and improved performance.
+		     This generates C# code from XAML at compile time instead of runtime inflation.
+		     To disable, remove this line.
+		     For individual files, you can override by setting Inflator metadata:
+		       <MauiXaml Update="MyPage.xaml" Inflator="Default" /> (reverts to defaults: Runtime for Debug, XamlC for Release)
+		       <MauiXaml Update="MyPage.xaml" Inflator="Runtime" /> (force runtime inflation) -->
+		<MauiXamlInflator>SourceGen</MauiXamlInflator>
+
+		<!-- Display name -->
+		<ApplicationTitle>appClassePessoaBD</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
+		<WindowsPackageType>None</WindowsPackageType>
+
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-ios|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-maccatalyst|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-ios|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-maccatalyst|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationTitle>Usando Banco de Dados</ApplicationTitle>
+	  <ApplicationId>br.edu.udf.appclassepessoabd</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>100</ApplicationVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+	    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\iconpessoa.svg" ForegroundScale="0.5" />
+
+		<!-- Splash Screen temporarily disabled -->
+	    <!-- <MauiSplashScreen Include="Resources\Splash\splash.png" Color="#FFFFFF" BaseSize="800,600" /> -->
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<!-- Windows App SDK (inclui bootstrap automático para unpackaged apps) -->
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250907003" />
+	</ItemGroup>
+
+	<!-- Auto-initialization do Windows App SDK para unpackaged apps -->
+	<PropertyGroup>
+		<WindowsAppSDKBootstrapAutoInitializeOptions_Default>true</WindowsAppSDKBootstrapAutoInitializeOptions_Default>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Folder Include="Model\" />
+	  <Folder Include="DAL\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\TelaAlterarPessoa.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TelaIncluirPessoa.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TelaListaPessoa.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>
+</file>
+
+</files>
