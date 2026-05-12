@@ -49,8 +49,8 @@
                                                 <VisualState x:Name="Normal" />
                                                 <VisualState x:Name="PointerOver">
                                                     <VisualState.Setters>
-                                                        <!-- Restaurando Hover Escuro solicitado -->
-                                                        <Setter Property="BackgroundColor" Value="#E0000000" />
+                                                        <!-- Hover com opacidade reduzida (25%) -->
+                                                        <Setter Property="BackgroundColor" Value="#40000000" />
                                                     </VisualState.Setters>
                                                 </VisualState>
                                                 <VisualState x:Name="Selected">

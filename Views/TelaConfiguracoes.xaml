@@ -20,9 +20,9 @@
                    Margin="0,0,0,20" />
 
             <!-- Opção: Salvar último nome -->
-            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource ContainerLight}, Dark={StaticResource ContainerDark}}" 
+            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
                    BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10" 
+                   CornerRadius="10"
                    Padding="15">
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Switch x:Name="switchSalvarNome"
@@ -36,9 +36,9 @@
             </Frame>
 
             <!-- Opção: Ativar sons -->
-            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource ContainerLight}, Dark={StaticResource ContainerDark}}" 
+            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
                    BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10" 
+                   CornerRadius="10"
                    Padding="15">
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Switch x:Name="switchAtivarSons"
@@ -52,7 +52,7 @@
             </Frame>
 
             <!-- Opção: Limpar dados -->
-            <Frame BackgroundColor="#FFE0E0" CornerRadius="10" Padding="15">
+            <Frame BackgroundColor="#40FF0000" CornerRadius="10" Padding="15">
                 <StackLayout Spacing="10">
                     <Label Text="Zona de Perigo"
                            FontAttributes="Bold"

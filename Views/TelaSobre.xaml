@@ -49,9 +49,9 @@
                        FontSize="16"
                        Margin="0,20,0,10" />
 
-                <Frame BackgroundColor="{AppThemeBinding Light={StaticResource ContainerLight}, Dark={StaticResource ContainerDark}}" 
+                <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
                        BorderColor="{StaticResource ContainerBorder}"
-                       CornerRadius="10" 
+                       CornerRadius="10"
                        Padding="15">
                     <StackLayout Spacing="10">
                         <Label Text="• C# 12 / .NET 8.0" FontSize="14" />

@@ -16,7 +16,7 @@
             <StackLayout Padding="20" Spacing="20">
                 <Label Text="Editar Dados" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
 
-                <Border Stroke="{StaticResource ContainerBorder}" BackgroundColor="{AppThemeBinding Light=#A0FFFFFF, Dark=#A0000000}" Padding="10,5" StrokeShape="RoundRectangle 8">
+                <Border Stroke="{StaticResource ContainerBorder}" BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}" Padding="10,5" StrokeShape="RoundRectangle 8">
                     <Entry Placeholder="Nome:"
                            Text="{Binding Nome}"
                            FontAttributes="Bold"
@@ -24,7 +24,7 @@
                            TextTransform="Uppercase" />
                 </Border>
 
-                <Border Stroke="{StaticResource ContainerBorder}" BackgroundColor="{AppThemeBinding Light=#A0FFFFFF, Dark=#A0000000}" Padding="10,5" StrokeShape="RoundRectangle 8">
+                <Border Stroke="{StaticResource ContainerBorder}" BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}" Padding="10,5" StrokeShape="RoundRectangle 8">
                     <Entry Placeholder="Idade:"
                            Text="{Binding Idade}"
                            FontAttributes="Bold"
