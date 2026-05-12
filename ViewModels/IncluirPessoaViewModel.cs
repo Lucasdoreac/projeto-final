@@ -81,7 +81,11 @@ namespace appClassePessoaBD.ViewModels
                 await _pessoaService.Insert(pessoa);
 
                 // Voltar para a tela anterior
-                await Application.Current.MainPage.Navigation.PopAsync();
+                var mainPage = Application.Current?.MainPage;
+                if (mainPage != null)
+                {
+                    await mainPage.Navigation.PopAsync();
+                }
             }
             finally
             {

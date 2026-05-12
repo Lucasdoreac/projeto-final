@@ -52,8 +52,10 @@ namespace appClassePessoaBD.Views
             if (e.SelectedItem == null)
                 return;
 
-            var pessoa = e.SelectedItem as Pessoa;
-            await Navigation.PushAsync(new TelaAlterarPessoa(pessoa));
+            if (e.SelectedItem is Pessoa pessoa)
+            {
+                await Navigation.PushAsync(new TelaAlterarPessoa(pessoa));
+            }
 
             lstPessoas.SelectedItem = null;
         }

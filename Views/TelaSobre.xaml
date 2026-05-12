@@ -49,7 +49,10 @@
                        FontSize="16"
                        Margin="0,20,0,10" />
 
-                <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+                <Frame BackgroundColor="{AppThemeBinding Light={StaticResource ContainerLight}, Dark={StaticResource ContainerDark}}" 
+                       BorderColor="{StaticResource ContainerBorder}"
+                       CornerRadius="10" 
+                       Padding="15">
                     <StackLayout Spacing="10">
                         <Label Text="• C# 12 / .NET 8.0" FontSize="14" />
                         <Label Text="• .NET MAUI (Multi-platform App UI)" FontSize="14" />
@@ -59,16 +62,6 @@
                         <Label Text="• Preferences API" FontSize="14" />
                     </StackLayout>
                 </Frame>
-
-                <!-- WebView com GitHub -->
-                <Label Text="Repositório GitHub:"
-                       FontAttributes="Bold"
-                       FontSize="16"
-                       Margin="0,20,0,10" />
-
-                <WebView x:Name="webViewGitHub"
-                         HeightRequest="400"
-                         BackgroundColor="White" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

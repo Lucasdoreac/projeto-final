@@ -42,6 +42,25 @@
                                 </ViewCell.ContextActions>
 
                                 <Grid RowDefinitions="Auto" ColumnDefinitions="*, *, *" Padding="15">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroupList>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal" />
+                                                <VisualState x:Name="PointerOver">
+                                                    <VisualState.Setters>
+                                                        <!-- Restaurando Hover Escuro solicitado -->
+                                                        <Setter Property="BackgroundColor" Value="#E0000000" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="Selected">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateGroupList>
+                                    </VisualStateManager.VisualStateGroups>
+
                                     <Label Grid.Row="0" Grid.Column="0" Text="{Binding pesID}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" />
                                     <Label Grid.Row="0" Grid.Column="1" Text="{Binding pesNome}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" />
                                     <Label Grid.Row="0" Grid.Column="2" Text="{Binding pesIdade}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" />

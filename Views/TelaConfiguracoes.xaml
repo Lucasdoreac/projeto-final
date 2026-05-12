@@ -20,7 +20,10 @@
                    Margin="0,0,0,20" />
 
             <!-- Opção: Salvar último nome -->
-            <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource ContainerLight}, Dark={StaticResource ContainerDark}}" 
+                   BorderColor="{StaticResource ContainerBorder}"
+                   CornerRadius="10" 
+                   Padding="15">
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Switch x:Name="switchSalvarNome"
                             IsToggled="{Binding SalvarUltimoNome}"
@@ -33,7 +36,10 @@
             </Frame>
 
             <!-- Opção: Ativar sons -->
-            <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource ContainerLight}, Dark={StaticResource ContainerDark}}" 
+                   BorderColor="{StaticResource ContainerBorder}"
+                   CornerRadius="10" 
+                   Padding="15">
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Switch x:Name="switchAtivarSons"
                             IsToggled="{Binding AtivarSons}"

@@ -1,5 +1,6 @@
 using appClassePessoaBD.Model;
 using appClassePessoaBD.DAL;
+using System.Text;
 
 namespace appClassePessoaBD.Services
 {
@@ -35,6 +36,21 @@ namespace appClassePessoaBD.Services
         public Task<List<Pessoa>> Search(string nome)
         {
             return _database.Search(nome);
+        }
+
+        public async Task<string> ExportToCsvAsync()
+        {
+            var pessoas = await GetAll();
+
+            var csv = new StringBuilder();
+            csv.AppendLine("ID,Nome,Idade");
+
+            foreach (var pessoa in pessoas)
+            {
+                csv.AppendLine($"{pessoa.pesID},{pessoa.pesNome},{pessoa.pesIdade}");
+            }
+
+            return csv.ToString();
         }
     }
 }

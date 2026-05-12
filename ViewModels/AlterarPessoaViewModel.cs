@@ -7,7 +7,7 @@ namespace appClassePessoaBD.ViewModels
     public class AlterarPessoaViewModel : BaseViewModel
     {
         private readonly IPessoaService _pessoaService;
-        private Pessoa _pessoaOriginal;
+        private Pessoa? _pessoaOriginal;
         private string _nome = string.Empty;
         private int _idade;
         private string _mensagemErro = string.Empty;
@@ -40,9 +40,9 @@ namespace appClassePessoaBD.ViewModels
 
         public void DefinirPessoa(Pessoa pessoa)
         {
-            _pessoaOriginal = pessoa;
-            Nome = pessoa.pesNome ?? string.Empty;
-            Idade = pessoa.pesIdade;
+            _pessoaOriginal = pessoa ?? throw new ArgumentNullException(nameof(pessoa));
+            Nome = _pessoaOriginal.pesNome ?? string.Empty;
+            Idade = _pessoaOriginal.pesIdade;
         }
 
         private async Task SalvarAsync()
@@ -80,6 +80,12 @@ namespace appClassePessoaBD.ViewModels
                     return;
                 }
 
+                if (_pessoaOriginal == null)
+                {
+                    MensagemErro = "Pessoa original não definida.";
+                    return;
+                }
+
                 var pessoa = new Pessoa
                 {
                     pesID = _pessoaOriginal.pesID,
@@ -90,7 +96,11 @@ namespace appClassePessoaBD.ViewModels
                 await _pessoaService.Update(pessoa);
 
                 // Voltar para a tela anterior
-                await Application.Current.MainPage.Navigation.PopAsync();
+                var mainPage = Application.Current?.MainPage;
+                if (mainPage != null)
+                {
+                    await mainPage.Navigation.PopAsync();
+                }
             }
             finally
             {

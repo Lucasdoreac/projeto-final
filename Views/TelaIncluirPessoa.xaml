@@ -12,31 +12,33 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Border Stroke="#30f1b7" Padding="10,5" Margin="4" StrokeShape="RoundRectangle 8,0">
-                <Entry Placeholder="Nome:"
-                       Text="{Binding Nome}"
-                       FontAttributes="Bold"
-                       Margin="4"
-                       ClearButtonVisibility="WhileEditing"
-                       TextTransform="Uppercase" />
-            </Border>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <Label Text="Dados da Pessoa" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                
+                <Border Stroke="{StaticResource ContainerBorder}" BackgroundColor="{AppThemeBinding Light=#A0FFFFFF, Dark=#A0000000}" Padding="10,5" StrokeShape="RoundRectangle 8">
+                    <Entry Placeholder="Nome:"
+                           Text="{Binding Nome}"
+                           FontAttributes="Bold"
+                           ClearButtonVisibility="WhileEditing"
+                           TextTransform="Uppercase" />
+                </Border>
 
-            <Border Stroke="#30f1b7" Padding="10,5" Margin="4" StrokeShape="RoundRectangle 8,0">
-                <Entry Placeholder="Idade:"
-                       Text="{Binding Idade}"
-                       FontAttributes="Bold"
-                       Margin="4"
-                       Keyboard="Numeric"
-                       ClearButtonVisibility="WhileEditing" />
-            </Border>
+                <Border Stroke="{StaticResource ContainerBorder}" BackgroundColor="{AppThemeBinding Light=#A0FFFFFF, Dark=#A0000000}" Padding="10,5" StrokeShape="RoundRectangle 8">
+                    <Entry Placeholder="Idade:"
+                           Text="{Binding Idade}"
+                           FontAttributes="Bold"
+                           Keyboard="Numeric"
+                           ClearButtonVisibility="WhileEditing" />
+                </Border>
 
-            <!-- Label para mostrar erros de validação -->
-            <Label Text="{Binding MensagemErro}"
-                   TextColor="Red"
-                   FontAttributes="Bold"
-                   Margin="10" />
-        </StackLayout>
+                <!-- Label para mostrar erros de validação -->
+                <Label Text="{Binding MensagemErro}"
+                       TextColor="Red"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

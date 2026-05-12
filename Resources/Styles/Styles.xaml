@@ -9,14 +9,16 @@
     </Style>
 
     <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"/>
-        <Setter Property="BarTextColor" Value="{StaticResource White}"/>
+        <!-- Barra Branca Profissional conforme solicitado -->
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
+        <!-- Texto da Barra em Preto para ser VISÍVEL sobre o fundo branco -->
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
     </Style>
 
     <Style TargetType="Button">
-        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Gray900}"/>
         <Setter Property="TextColor" Value="{StaticResource White}"/>
-        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="Padding" Value="14,10"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
@@ -35,6 +37,10 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="14"/>
+        <!-- Sombra reforçada para legibilidade sobre imagem com personagem branco -->
+        <Setter Property="Shadow">
+            <Shadow Brush="Black" Offset="2,2" Radius="4" Opacity="0.9" />
+        </Setter>
     </Style>
 
 </ResourceDictionary>

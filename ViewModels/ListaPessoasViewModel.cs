@@ -30,6 +30,7 @@ namespace appClassePessoaBD.ViewModels
         public ICommand BuscarCommand { get; }
         public ICommand RefreshCommand { get; }
         public ICommand SelecionarCommand { get; }
+        public ICommand ExportarCommand { get; }
 
         public ListaPessoasViewModel(IPessoaService pessoaService)
         {
@@ -43,6 +44,7 @@ namespace appClassePessoaBD.ViewModels
             BuscarCommand = new Command(async () => await BuscarAsync());
             RefreshCommand = new Command(async () => await RefreshAsync());
             SelecionarCommand = new Command<Pessoa>(async (p) => await SelecionarAsync(p));
+            ExportarCommand = new Command(async () => await ExportarAsync());
         }
 
         public async Task CarregarPessoasAsync()
@@ -110,6 +112,36 @@ namespace appClassePessoaBD.ViewModels
         {
             // Será implementado via navegação
             await Task.CompletedTask;
+        }
+
+        private async Task ExportarAsync()
+        {
+            if (IsBusy)
+                return;
+
+            try
+            {
+                IsBusy = true;
+
+                // Gerar CSV
+                var csvContent = await _pessoaService.ExportToCsvAsync();
+
+                // Salvar em arquivo
+                var fileName = $"pessoas_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+                var filePath = Path.Combine(FileSystem.AppDataDirectory, fileName);
+                await File.WriteAllTextAsync(filePath, csvContent);
+
+                // Compartilhar arquivo
+                await Share.Default.RequestAsync(new ShareFileRequest
+                {
+                    Title = "Exportar Pessoas CSV",
+                    File = new ShareFile(filePath)
+                });
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

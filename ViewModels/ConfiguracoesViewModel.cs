@@ -10,6 +10,7 @@ namespace appClassePessoaBD.ViewModels
         private bool _salvarUltimoNome;
         private bool _ativarSons;
         private string _mensagemSucesso = string.Empty;
+        private string _mensagemErro = string.Empty;
 
         public bool SalvarUltimoNome
         {
@@ -27,6 +28,12 @@ namespace appClassePessoaBD.ViewModels
         {
             get => _mensagemSucesso;
             set => SetProperty(ref _mensagemSucesso, value);
+        }
+
+        public string MensagemErro
+        {
+            get => _mensagemErro;
+            set => SetProperty(ref _mensagemErro, value);
         }
 
         public ICommand SalvarCommand { get; }
@@ -65,7 +72,11 @@ namespace appClassePessoaBD.ViewModels
                 await Task.Delay(2000);
                 MensagemSucesso = string.Empty;
 
-                await Application.Current.MainPage.Navigation.PopAsync();
+                var mainPage = Application.Current?.MainPage;
+                if (mainPage != null)
+                {
+                    await mainPage.Navigation.PopAsync();
+                }
             }
             finally
             {
@@ -80,7 +91,14 @@ namespace appClassePessoaBD.ViewModels
 
             try
             {
-                bool confirmar = await Application.Current.MainPage.DisplayAlert(
+                var mainPage = Application.Current?.MainPage;
+                if (mainPage == null)
+                {
+                    MensagemErro = "MainPage não disponível.";
+                    return;
+                }
+
+                bool confirmar = await mainPage.DisplayAlert(
                     "Confirmação",
                     "Tem certeza que deseja apagar TODOS os dados? Esta ação não pode ser desfeita.",
                     "Sim",
@@ -101,11 +119,14 @@ namespace appClassePessoaBD.ViewModels
                     await _pessoaService.Delete(pessoa.pesID);
                 }
 
-                await Application.Current.MainPage.DisplayAlert(
-                    "Sucesso",
-                    $"Foram apagadas {pessoas.Count} pessoas.",
-                    "OK"
-                );
+                if (mainPage != null)
+                {
+                    await mainPage.DisplayAlert(
+                        "Sucesso",
+                        $"Foram apagadas {pessoas.Count} pessoas.",
+                        "OK"
+                    );
+                }
             }
             finally
             {

@@ -61,7 +61,7 @@ namespace appClassePessoaBD
             MainPage = new NavigationPage(new TelaListaPessoa());
         }
 
-        protected override Window CreateWindow(IActivationState activationState)
+        protected override Window CreateWindow(IActivationState? activationState)
         {
             Window window = base.CreateWindow(activationState);
 

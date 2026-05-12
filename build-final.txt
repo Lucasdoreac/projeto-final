@@ -1,0 +1,11 @@
+  Determinando os projetos a serem restaurados...
+  Todos os projetos estão atualizados para restauração.
+C:\Users\lucas\source\repos\projeto-final\ViewModels\ConfiguracoesViewModel.cs(122,21): error CS0128: Uma variável de local ou função denominada 'mainPage' já está definida neste escopo [C:\Users\lucas\source\repos\projeto-final\appClassePessoaBD.csproj::TargetFramework=net8.0-windows10.0.19041.0]
+
+FALHA da compilação.
+
+C:\Users\lucas\source\repos\projeto-final\ViewModels\ConfiguracoesViewModel.cs(122,21): error CS0128: Uma variável de local ou função denominada 'mainPage' já está definida neste escopo [C:\Users\lucas\source\repos\projeto-final\appClassePessoaBD.csproj::TargetFramework=net8.0-windows10.0.19041.0]
+    0 Aviso(s)
+    1 Erro(s)
+
+Tempo Decorrido 00:00:06.77

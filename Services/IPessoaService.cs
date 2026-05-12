@@ -9,5 +9,6 @@ namespace appClassePessoaBD.Services
         Task<List<Pessoa>> Update(Pessoa pessoa);
         Task<int> Delete(int id);
         Task<List<Pessoa>> Search(string nome);
+        Task<string> ExportToCsvAsync();
     }
 }

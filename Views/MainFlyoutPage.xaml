@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:appClassePessoaBD.Views"
+            x:Class="appClassePessoaBD.Views.MainFlyoutPage">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu" BackgroundColor="{StaticResource White}">
+            <StackLayout Padding="20" Spacing="20" VerticalOptions="Start">
+                <Label Text="MENU" FontAttributes="Bold" FontSize="20" TextColor="Black" Margin="0,40,0,20"/>
+                <Button Text="📋 Lista de Pessoas" Clicked="OnIrParaLista" BackgroundColor="{StaticResource Gray900}" TextColor="White" />
+                <Button Text="⚙️ Configurações" Clicked="OnIrParaConfig" BackgroundColor="{StaticResource Gray900}" TextColor="White" />
+                <Button Text="ℹ️ Sobre" Clicked="OnIrParaSobre" BackgroundColor="{StaticResource Gray900}" TextColor="White" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views:TelaListaPessoa />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
