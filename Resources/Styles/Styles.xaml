@@ -37,10 +37,6 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="14"/>
-        <!-- Sombra reforçada para legibilidade sobre imagem com personagem branco -->
-        <Setter Property="Shadow">
-            <Shadow Brush="Black" Offset="2,2" Radius="4" Opacity="0.9" />
-        </Setter>
     </Style>
 
 </ResourceDictionary>
