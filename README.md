@@ -1,59 +1,67 @@
 # appClassePessoaBD
 
-**Projeto Final - PDM 2026**  
-Cadastro de Pessoas com SQLite + .NET MAUI
+**Projeto Final - PDM 2026 (UDF)**  
+Sistema de Cadastro de Pessoas desenvolvido com .NET MAUI e SQLite.
 
-## 📋 Sobre
+## 📋 Sobre o Projeto
 
-Aplicativo CRUD completo para gerenciamento de pessoas:
-- ✅ Create/Read/Update/Delete
-- ✅ SQLite (Model/DAL pattern)
-- ✅ ListView com SearchBar
-- ✅ ToolbarItem + ContextActions
-- ✅ 3 telas: Lista, Incluir, Alterar
+Este aplicativo é um CRUD completo para gerenciamento de registros de pessoas, utilizando o padrão MVVM e persistência local com SQLite. Foi refatorado para utilizar `NavigationPage` com uma interface moderna e intuitiva.
+
+### Principais Funcionalidades:
+- **Gerenciamento Completo (CRUD):** Inclusão, listagem, alteração e exclusão de pessoas.
+- **Interface Otimizada:** Toolbar com itens primários (Incluir/Exportar) e menu secundário (Estatísticas/Configurações/Sobre).
+- **Busca em Tempo Real:** Filtragem de nomes diretamente na lista.
+- **Estatísticas:** Visualização de métricas dos dados cadastrados.
+- **Exportação:** Suporte a exportação de dados (CSV).
+- **Documentação Integrada:** Tela "Sobre" com acesso direto ao repositório via WebView.
 
 ## 🚀 Como Executar
 
-### Windows (Recomendado)
-1. Clone o repositório
-2. Abra `appClassePessoaBD.sln` no Visual Studio 2022+
-3. Pressione F5 (Debug) ou Ctrl+F5 (Release)
+### Pré-requisitos
+- Visual Studio 2022 (v17.12+) com a carga de trabalho ".NET Multi-platform App UI development".
+- .NET 10.0 SDK.
 
-### Gerar Executável
+### Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Lucasdoreac/projeto-final.git
+   ```
+2. Abra a solução `appClassePessoaBD.sln` no Visual Studio.
+3. Restaure os pacotes NuGet.
+4. Selecione o target `Windows Machine` e pressione `F5`.
+
+### Build via Script (Windows)
 ```powershell
 .\build-windows.ps1
 ```
-Ver instruções completas em [BUILD.md](BUILD.md)
 
-## 📁 Estrutura
+## 📁 Estrutura do Repositório
 
+```text
+├── DAL/                # Camada de Acesso a Dados (SQLite CRUD)
+├── Model/              # Modelos de dados (Pessoa)
+├── ViewModels/         # Lógica de interface (MVVM)
+├── Views/              # Definições de telas (XAML)
+├── Services/           # Serviços e lógica de negócio
+├── Helpers/            # Utilitários e Logger
+├── Resources/          # Ícones, Imagens, Fontes e Estilos
+├── appClassePessoaBD.csproj  # Configurações do projeto
+└── global.json         # Configuração do SDK .NET
 ```
-├── Model/Pessoa.cs           # POCO com atributos SQLite
-├── DAL/crudSQLite.cs       # CRUD async (Insert, Update, Delete, GetAll, Search)
-├── Views/
-│   ├── TelaListaPessoa.xaml       # ListView + SearchBar + ToolbarItem
-│   ├── TelaIncluirPessoa.xaml    # Formulário CREATE
-│   └── TelaAlterarPessoa.xaml     # Formulário UPDATE
-└── Resources/                    # Imagens, ícones, splash
-```
 
-## 🎓 Curso
+## 🔧 Tecnologias Utilizadas
 
-**Disciplina:** Programação Para Dispositivos Móveis 2026  
-**Entrega:** 09/06 (Prova A1) - Resultados: 16/06
+- **Framework:** .NET MAUI 10.0
+- **Linguagem:** C# 12
+- **Banco de Dados:** SQLite (via `sqlite-net-pcl`)
+- **Arquitetura:** MVVM (Model-View-ViewModel)
 
-## 🔧 Tecnologias
+## 🎓 Informações Acadêmicas
 
-- .NET MAUI 10.0
-- SQLite (sqlite-net-pcl 1.9.172)
-- C# 12 + async/await
-- XAML + MVVM pattern
-
-## 📱 Configuração
-
-**Application ID:** `br.edu.udf.appclassepessoabd`  
-**Platforms:** Windows 10 1809+ (net10.0-windows10.0.19041.0)
+- **Instituição:** UDF Centro Universitário
+- **Disciplina:** Programação Para Dispositivos Móveis 2026
+- **Resultados:** 16/06
 
 ## 📄 Licença
 
-Projeto acadêmico - UDF 2026
+Este projeto é de caráter acadêmico.
