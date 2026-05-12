@@ -5,7 +5,7 @@ namespace appClassePessoaBD.Views
     public partial class FlyoutMenuPage : ContentPage
     {
         // Evento para notificar quando um item do menu for selecionado
-        public event EventHandler<Page> MenuSelected;
+        public event EventHandler<Page>? MenuSelected;
 
         public FlyoutMenuPage()
         {
@@ -24,12 +24,12 @@ namespace appClassePessoaBD.Views
             menuListView.ItemTapped += OnMenuItemTapped;
         }
 
-        private void OnMenuItemTapped(object sender, ItemTappedEventArgs e)
+        private void OnMenuItemTapped(object? sender, ItemTappedEventArgs e)
         {
             if (e.Item is MenuItem menuItem)
             {
                 // Criar instância da página selecionada
-                var page = (Page)Activator.CreateInstance(menuItem.PageType);
+                var page = (Page)Activator.CreateInstance(menuItem.PageType) ?? throw new InvalidOperationException($"Failed to create instance of {menuItem.PageType.Name}");
 
                 // Disparar evento com a página selecionada
                 MenuSelected?.Invoke(this, page);
@@ -40,7 +40,7 @@ namespace appClassePessoaBD.Views
         }
 
         // Classe para representar itens do menu
-        private class MenuItem
+        public class MenuItem
         {
             public string Icon { get; set; } = string.Empty;
             public string Title { get; set; } = string.Empty;
