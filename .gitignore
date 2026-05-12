@@ -66,3 +66,6 @@ artifacts/
 # Visual Studio cache
 .idea/
 *.slnx
+
+# AI Development Tools
+.claude/
