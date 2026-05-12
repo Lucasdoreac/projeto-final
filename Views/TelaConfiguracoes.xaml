@@ -35,22 +35,6 @@
                 </StackLayout>
             </Frame>
 
-            <!-- Opção: Ativar sons -->
-            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                   BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10"
-                   Padding="15">
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                    <Switch x:Name="switchAtivarSons"
-                            IsToggled="{Binding AtivarSons}"
-                            HorizontalOptions="Start"
-                            VerticalOptions="Center" />
-                    <Label Text="Ativar sons do sistema"
-                           VerticalOptions="Center"
-                           FontSize="16" />
-                </StackLayout>
-            </Frame>
-
             <!-- Opção: Limpar dados -->
             <Frame BackgroundColor="#40FF0000" CornerRadius="10" Padding="15">
                 <StackLayout Spacing="10">

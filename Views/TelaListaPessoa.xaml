@@ -9,10 +9,20 @@
              Title="Lista de Pessoas">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Clicked="OnIncluirClicked" />
-        <ToolbarItem Text="Exportar CSV" IconImageSource="salvarpessoa.png" Command="{Binding ExportarCommand}" />
-        <ToolbarItem Text="Configurações" Clicked="OnConfiguracoesClicked" Order="Secondary" />
-        <ToolbarItem Text="Sobre" Clicked="OnSobreClicked" Order="Secondary" />
+        <!-- TESTE: Todos Primary (sem menu três pontos) -->
+        <ToolbarItem Text="Incluir"
+                     IconImageSource="iconincluirpessoa.png"
+                     Clicked="OnIncluirClicked" />
+
+        <ToolbarItem Text="Exportar CSV"
+                     IconImageSource="salvarpessoa.png"
+                     Command="{Binding ExportarCommand}" />
+
+        <ToolbarItem Text="Configurações"
+                     Clicked="OnConfiguracoesClicked" />
+
+        <ToolbarItem Text="Sobre"
+                     Clicked="OnSobreClicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -49,8 +59,8 @@
                                                 <VisualState x:Name="Normal" />
                                                 <VisualState x:Name="PointerOver">
                                                     <VisualState.Setters>
-                                                        <!-- Hover com opacidade reduzida (25%) -->
-                                                        <Setter Property="BackgroundColor" Value="#40000000" />
+                                                        <!-- Hover mais escuro (50%) -->
+                                                        <Setter Property="BackgroundColor" Value="#80000000" />
                                                     </VisualState.Setters>
                                                 </VisualState>
                                                 <VisualState x:Name="Selected">

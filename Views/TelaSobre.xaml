@@ -6,64 +6,30 @@
              Title="Sobre">
 
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="20" Spacing="20">
-                <!-- Título e Versão -->
-                <Label Text="Cadastro de Pessoas"
+        <Grid RowDefinitions="Auto, *">
+            <!-- Info básica do app -->
+            <StackLayout Grid.Row="0" Padding="20" Spacing="10">
+                <Label Text="Cadastro de Pessoas - Versão 1.0"
                        FontSize="Title"
                        FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       Margin="0,0,0,10" />
-
-                <Label Text="Versão 1.0"
-                       FontSize="16"
-                       HorizontalOptions="Center"
-                       Margin="0,0,0,20" />
-
-                <Label Text="Aplicativo desenvolvido para a disciplina de"
-                       FontSize="14"
-                       HorizontalTextAlignment="Center" />
+                       HorizontalOptions="Center" />
 
                 <Label Text="Programação Para Dispositivos Móveis 2026"
                        FontAttributes="Bold"
                        FontSize="14"
-                       HorizontalTextAlignment="Center"
-                       Margin="0,0,0,20" />
-
-                <Label Text="Créditos:"
-                       FontAttributes="Bold"
-                       FontSize="16"
-                       Margin="0,20,0,10" />
-
-                <Label Text="Desenvolvido com .NET MAUI 8.0"
-                       FontSize="14"
                        HorizontalTextAlignment="Center" />
 
-                <Label Text="SQLite + MVVM + Data Binding"
-                       FontSize="14"
+                <Label Text="Documentação e código-fonte no GitHub (WebView embedded):"
+                       FontSize="12"
                        HorizontalTextAlignment="Center"
-                       Margin="0,0,0,20" />
-
-                <Label Text="Tecnologias Utilizadas:"
-                       FontAttributes="Bold"
-                       FontSize="16"
-                       Margin="0,20,0,10" />
-
-                <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                       BorderColor="{StaticResource ContainerBorder}"
-                       CornerRadius="10"
-                       Padding="15">
-                    <StackLayout Spacing="10">
-                        <Label Text="• C# 12 / .NET 8.0" FontSize="14" />
-                        <Label Text="• .NET MAUI (Multi-platform App UI)" FontSize="14" />
-                        <Label Text="• SQLite (sqlite-net-pcl)" FontSize="14" />
-                        <Label Text="• MVVM Pattern" FontSize="14" />
-                        <Label Text="• Data Binding" FontSize="14" />
-                        <Label Text="• Preferences API" FontSize="14" />
-                    </StackLayout>
-                </Frame>
+                       Margin="0,5,0,0" />
             </StackLayout>
-        </ScrollView>
+
+            <!-- WebView EMBEDDED - GitHub dentro do app -->
+            <WebView x:Name="githubWebView"
+                     Grid.Row="1"
+                     Source="https://github.com/lucasdoreac/projeto-final" />
+        </Grid>
     </ContentPage.Content>
 
 </ContentPage>

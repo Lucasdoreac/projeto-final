@@ -8,7 +8,6 @@ namespace appClassePessoaBD.ViewModels
     {
         private readonly IPessoaService _pessoaService;
         private bool _salvarUltimoNome;
-        private bool _ativarSons;
         private string _mensagemSucesso = string.Empty;
         private string _mensagemErro = string.Empty;
 
@@ -16,12 +15,6 @@ namespace appClassePessoaBD.ViewModels
         {
             get => _salvarUltimoNome;
             set => SetProperty(ref _salvarUltimoNome, value);
-        }
-
-        public bool AtivarSons
-        {
-            get => _ativarSons;
-            set => SetProperty(ref _ativarSons, value);
         }
 
         public string MensagemSucesso
@@ -51,7 +44,6 @@ namespace appClassePessoaBD.ViewModels
         private void CarregarConfiguracoes()
         {
             SalvarUltimoNome = Preferences.Get("SalvarUltimoNome", true);
-            AtivarSons = Preferences.Get("AtivarSons", true);
         }
 
         private async Task SalvarAsync()
@@ -65,7 +57,6 @@ namespace appClassePessoaBD.ViewModels
                 MensagemSucesso = string.Empty;
 
                 Preferences.Set("SalvarUltimoNome", SalvarUltimoNome);
-                Preferences.Set("AtivarSons", AtivarSons);
 
                 MensagemSucesso = "Configurações salvas com sucesso!";
 
