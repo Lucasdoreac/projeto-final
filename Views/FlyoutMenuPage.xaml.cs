@@ -26,16 +26,30 @@ namespace appClassePessoaBD.Views
 
         private void OnMenuItemTapped(object? sender, ItemTappedEventArgs e)
         {
-            if (e.Item is MenuItem menuItem)
+            try
             {
-                // Criar instância da página selecionada
-                var page = (Page)Activator.CreateInstance(menuItem.PageType) ?? throw new InvalidOperationException($"Failed to create instance of {menuItem.PageType.Name}");
+                if (e.Item is MenuItem menuItem)
+                {
+                    // Criar instância da página selecionada
+                    var pageInstance = Activator.CreateInstance(menuItem.PageType);
+                    if (pageInstance is Page page)
+                    {
+                        // Disparar evento com a página selecionada
+                        MenuSelected?.Invoke(this, page);
 
-                // Disparar evento com a página selecionada
-                MenuSelected?.Invoke(this, page);
-
-                // Deselecionar item
-                menuListView.SelectedItem = null;
+                        // Deselecionar item
+                        menuListView.SelectedItem = null;
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Failed to create page: {menuItem.PageType.Name}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error in OnMenuItemTapped: {ex.Message}");
+                // Não propagar exceção para não crashar o app
             }
         }
 

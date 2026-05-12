@@ -1,4 +1,5 @@
 using System.Windows.Input;
+using System.Linq;
 using appClassePessoaBD.Model;
 using appClassePessoaBD.Services;
 

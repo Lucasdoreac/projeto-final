@@ -3,55 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:appClassePessoaBD.Views"
              x:Class="appClassePessoaBD.Views.FlyoutMenuPage"
-             BackgroundImageSource="fundo.png"
              Title="Menu">
 
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="10">
+        <Grid RowDefinitions="Auto, *" Padding="0">
             <!-- Cabeçalho do Menu -->
-            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                   BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10"
-                   Padding="15"
-                   Margin="0,0,0,20">
+            <Frame Grid.Row="0"
+                   BackgroundColor="{AppThemeBinding Light=#2196F3, Dark=#1976D2}"
+                   CornerRadius="0"
+                   Padding="20"
+                   Margin="0">
                 <StackLayout>
                     <Label Text="Cadastro de Pessoas"
                            FontAttributes="Bold"
                            FontSize="18"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                           TextColor="White" />
                     <Label Text="Programação Para Dispositivos Móveis 2026"
-                           FontSize="12"
-                           TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+                           FontSize="11"
+                           TextColor="#E3F2FD" />
                 </StackLayout>
             </Frame>
 
             <!-- Itens do Menu -->
-            <ListView x:Name="menuListView"
+            <ListView Grid.Row="1"
+                      x:Name="menuListView"
                       SeparatorVisibility="None"
-                      BackgroundColor="Transparent">
+                      BackgroundColor="Transparent"
+                      RowHeight="60">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                                   BorderColor="{StaticResource ContainerBorder}"
-                                   CornerRadius="10"
+                            <Frame BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
+                                   BorderColor="{AppThemeBinding Light=#E0E0E0, Dark=#404040}"
+                                   CornerRadius="8"
                                    Padding="15"
-                                   Margin="0,5">
+                                   Margin="10,5">
                                 <StackLayout Orientation="Horizontal" Spacing="15">
                                     <Label Text="{Binding Icon}"
-                                           FontSize="20"
-                                           VerticalOptions="Center" />
-                                    <Label Text="{Binding Title}"
-                                           FontSize="16"
+                                           FontSize="22"
                                            VerticalOptions="Center"
-                                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                                           Width="30" />
+                                    <Label Text="{Binding Title}"
+                                           FontSize="15"
+                                           VerticalOptions="Center"
+                                           TextColor="{AppThemeBinding Light=#212121, Dark=#FFFFFF}" />
                                 </StackLayout>
                             </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 
 </ContentPage>
