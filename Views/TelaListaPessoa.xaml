@@ -10,6 +10,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Incluir" IconImageSource="iconincluirpessoa.png" Clicked="OnIncluirClicked" />
+        <ToolbarItem Text="Exportar CSV" IconImageSource="salvarpessoa.png" Command="{Binding ExportarCommand}" />
         <ToolbarItem Text="Configurações" IconImageSource="iconconfig.png" Clicked="OnConfiguracoesClicked" Order="Secondary" />
         <ToolbarItem Text="Sobre" IconImageSource="iconsobre.png" Clicked="OnSobreClicked" Order="Secondary" />
     </ContentPage.ToolbarItems>
@@ -18,6 +19,16 @@
         <Grid>
             <StackLayout>
                 <SearchBar x:Name="txtBusca" Margin="10" Placeholder="Qual a Pessoa?" Text="{Binding TextoBusca}" />
+
+                <!-- Botão de Exportação em Destaque -->
+                <Button Text="📥 Exportar para CSV"
+                        Command="{Binding ExportarCommand}"
+                        BackgroundColor="#28A745"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="8"
+                        Margin="10,0,10,10"
+                        HeightRequest="50" />
 
                 <ListView x:Name="lstPessoas"
                           ItemsSource="{Binding Pessoas}"
