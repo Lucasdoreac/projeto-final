@@ -47,6 +47,18 @@ namespace appClassePessoaBD.Views
             }
         }
 
+        private async void OnEstatisticasClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new TelaEstatisticas());
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Erro ao abrir estatísticas: {ex.Message}", "OK");
+            }
+        }
+
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)

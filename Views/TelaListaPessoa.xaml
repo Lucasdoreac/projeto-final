@@ -9,20 +9,32 @@
              Title="Lista de Pessoas">
 
     <ContentPage.ToolbarItems>
-        <!-- TESTE: Todos Primary (sem menu três pontos) -->
+        <!-- Itens primários aparecem diretamente na navbar -->
         <ToolbarItem Text="Incluir"
                      IconImageSource="iconincluirpessoa.png"
-                     Clicked="OnIncluirClicked" />
+                     Clicked="OnIncluirClicked"
+                     Order="Primary" />
 
-        <ToolbarItem Text="Exportar CSV"
+        <ToolbarItem Text="Exportar"
                      IconImageSource="salvarpessoa.png"
-                     Command="{Binding ExportarCommand}" />
+                     Command="{Binding ExportarCommand}"
+                     Order="Primary" />
+
+        <!-- Itens secundários aparecem no menu de três pontos -->
+        <ToolbarItem Text="Estatísticas"
+                     Clicked="OnEstatisticasClicked"
+                     Order="Secondary"
+                     Priority="0" />
 
         <ToolbarItem Text="Configurações"
-                     Clicked="OnConfiguracoesClicked" />
+                     Clicked="OnConfiguracoesClicked"
+                     Order="Secondary"
+                     Priority="1" />
 
         <ToolbarItem Text="Sobre"
-                     Clicked="OnSobreClicked" />
+                     Clicked="OnSobreClicked"
+                     Order="Secondary"
+                     Priority="2" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
