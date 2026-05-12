@@ -53,12 +53,10 @@ namespace appClassePessoaBD
         {
             InitializeComponent();
 
-            /* Habilitando o recurso de navegação entre páginas e definindo a página
-             * de listagem (dentro da pasta Views) como a tela inicial do App.*/
+            /* Habilitando o recurso de navegação entre páginas com FlyoutPage (Menu Lateral).
+             * A página inicial é TelaListaPessoa, mas o usuário pode navegar usando o menu lateral.*/
 
-            //Fazendo a chamada a nossa tela inicial, e instanciamos um objeto do tipo
-            //NavigationPage, que vai receber um novo objeto do tipo TelaListaPessoa, para renderizar a tela
-            MainPage = new NavigationPage(new TelaListaPessoa());
+            MainPage = new AppFlyout();
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

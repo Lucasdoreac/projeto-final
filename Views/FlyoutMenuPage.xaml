@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:appClassePessoaBD.Views"
+             x:Class="appClassePessoaBD.Views.FlyoutMenuPage"
+             BackgroundImageSource="fundo.png"
+             Title="Menu">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+            <!-- Cabeçalho do Menu -->
+            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
+                   BorderColor="{StaticResource ContainerBorder}"
+                   CornerRadius="10"
+                   Padding="15"
+                   Margin="0,0,0,20">
+                <StackLayout>
+                    <Label Text="Cadastro de Pessoas"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                    <Label Text="Programação Para Dispositivos Móveis 2026"
+                           FontSize="12"
+                           TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Itens do Menu -->
+            <ListView x:Name="menuListView"
+                      SeparatorVisibility="None"
+                      BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
+                                   BorderColor="{StaticResource ContainerBorder}"
+                                   CornerRadius="10"
+                                   Padding="15"
+                                   Margin="0,5">
+                                <StackLayout Orientation="Horizontal" Spacing="15">
+                                    <Label Text="{Binding Icon}"
+                                           FontSize="20"
+                                           VerticalOptions="Center" />
+                                    <Label Text="{Binding Title}"
+                                           FontSize="16"
+                                           VerticalOptions="Center"
+                                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
