@@ -8,99 +8,101 @@
              Title="Estatísticas">
 
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="20">
-            <!-- Título -->
-            <Label Text="Estatísticas do Cadastro"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   Margin="0,0,0,20" />
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <!-- Título -->
+                <Label Text="Estatísticas do Cadastro"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,20" />
 
-            <!-- Cards de Estatísticas -->
-            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                   BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10"
-                   Padding="15">
-                <StackLayout Spacing="10">
-                    <Label Text="Total de Pessoas Cadastradas"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
-                    <Label Text="{Binding TotalPessoas}"
-                           FontSize="32"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           TextColor="#2196F3" />
-                </StackLayout>
-            </Frame>
+                <!-- Cards de Estatísticas -->
+                <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
+                       BorderColor="{StaticResource ContainerBorder}"
+                       CornerRadius="10"
+                       Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="Total de Pessoas Cadastradas"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Label Text="{Binding TotalPessoas}"
+                               FontSize="32"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="#2196F3" />
+                    </StackLayout>
+                </Frame>
 
-            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                   BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10"
-                   Padding="15">
-                <StackLayout Spacing="10">
-                    <Label Text="Média de Idade"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
-                    <Label Text="{Binding MediaIdade}"
-                           FontSize="32"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           TextColor="#4CAF50" />
-                </StackLayout>
-            </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
+                       BorderColor="{StaticResource ContainerBorder}"
+                       CornerRadius="10"
+                       Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="Média de Idade"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Label Text="{Binding MediaIdade}"
+                               FontSize="32"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="#4CAF50" />
+                    </StackLayout>
+                </Frame>
 
-            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                   BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10"
-                   Padding="15">
-                <StackLayout Spacing="10">
-                    <Label Text="Pessoa Mais Velha"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
-                    <Label Text="{Binding PessoaMaisVelha}"
-                           FontSize="18"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           TextColor="#FF9800" />
-                </StackLayout>
-            </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
+                       BorderColor="{StaticResource ContainerBorder}"
+                       CornerRadius="10"
+                       Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="Pessoa Mais Velha"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Label Text="{Binding PessoaMaisVelha}"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="#FF9800" />
+                    </StackLayout>
+                </Frame>
 
-            <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
-                   BorderColor="{StaticResource ContainerBorder}"
-                   CornerRadius="10"
-                   Padding="15">
-                <StackLayout Spacing="10">
-                    <Label Text="Pessoa Mais Nova"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
-                    <Label Text="{Binding PessoaMaisNova}"
-                           FontSize="18"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           TextColor="#9C27B0" />
-                </StackLayout>
-            </Frame>
+                <Frame BackgroundColor="{AppThemeBinding Light=#40FFFFFF, Dark=#40000000}"
+                       BorderColor="{StaticResource ContainerBorder}"
+                       CornerRadius="10"
+                       Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="Pessoa Mais Nova"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Label Text="{Binding PessoaMaisNova}"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="#9C27B0" />
+                    </StackLayout>
+                </Frame>
 
-            <!-- Botão para Atualizar -->
-            <Button Text="Atualizar Estatísticas"
-                    Command="{Binding CarregarEstatisticasCommand}"
-                    BackgroundColor="#2196F3"
-                    TextColor="White"
-                    CornerRadius="10"
-                    HeightRequest="50"
-                    Margin="0,20,0,0" />
+                <!-- Botão para Atualizar -->
+                <Button Text="Atualizar Estatísticas"
+                        Command="{Binding CarregarEstatisticasCommand}"
+                        BackgroundColor="#2196F3"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Margin="0,20,0,0" />
 
-            <!-- Label de mensagem de erro -->
-            <Label Text="{Binding MensagemErro}"
-                   TextColor="Red"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   IsVisible="{Binding TemErro}" />
-        </StackLayout>
+                <!-- Label de mensagem de erro -->
+                <Label Text="{Binding MensagemErro}"
+                       TextColor="Red"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       IsVisible="{Binding TemErro}" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

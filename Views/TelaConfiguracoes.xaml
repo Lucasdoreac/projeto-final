@@ -12,7 +12,8 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="20">
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
             <Label Text="Preferências do Aplicativo"
                    FontSize="Title"
                    FontAttributes="Bold"
@@ -66,7 +67,8 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    Margin="0,10,0,0" />
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

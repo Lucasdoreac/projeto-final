@@ -26,7 +26,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Grid>
+        <ScrollView>
             <StackLayout>
                 <SearchBar x:Name="txtBusca" Margin="10" Placeholder="Qual a Pessoa?" Text="{Binding TextoBusca}" />
 
@@ -80,18 +80,18 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
 
-            <!-- ActivityIndicator sobreposto durante carregamentos -->
-            <ActivityIndicator x:Name="loadingIndicator"
-                               IsRunning="{Binding IsBusy}"
-                               IsVisible="{Binding IsBusy}"
-                               Color="#512BD4"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               WidthRequest="50"
-                               HeightRequest="50" />
-        </Grid>
+                <!-- ActivityIndicator sobreposto durante carregamentos -->
+                <ActivityIndicator x:Name="loadingIndicator"
+                                   IsRunning="{Binding IsBusy}"
+                                   IsVisible="{Binding IsBusy}"
+                                   Color="#512BD4"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   WidthRequest="50"
+                                   HeightRequest="50" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>
